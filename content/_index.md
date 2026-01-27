@@ -9,8 +9,9 @@ sections:
     content:
       title: "Site Being Updated"
       text: |
-        For my current website:
-        * [Google Sites]([https://linkedin.com/in/yourprofile](https://sites.google.com/site/jamescloyne/))
+        My current website can be found here:
+        [https://sites.google.com/site/jamescloyne/]
+    
     design:
       columns: '1'
       background:
