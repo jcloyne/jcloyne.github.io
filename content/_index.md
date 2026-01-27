@@ -9,8 +9,7 @@ sections:
     content:
       title: "Site Being Updated"
       text: |
-        My current website can be found here:
-        [https://sites.google.com/site/jamescloyne/]
+        In the meantime, you can browse my existing webpages on **[Google Sites](https://sites.google.com/site/jamescloyne/)**
     
     design:
       columns: '1'
