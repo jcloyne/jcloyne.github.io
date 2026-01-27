@@ -7,18 +7,10 @@ date: 2024-01-01  # Use today's date
 sections:
   - block: markdown
     content:
-      title: "🚧 Site Under Construction"
-      subtitle: "My academic portfolio is getting a makeover."
+      title: "Site Being Updated"
       text: |
-        Hello! I'm **[Your Name]**, a [Your Role/PhD Student/Professor] at [Your University]. 
-
-        I am currently migrating my research, publications, and teaching materials to this new site. Please check back shortly for the full launch.
-
-        In the meantime, feel free to connect with me via:
-        
-        * [Email](mailto:your-email@example.com)
-        * [Twitter/X](https://twitter.com/yourhandle)
-        * [LinkedIn](https://linkedin.com/in/yourprofile)
+        For my current website:
+        * [Google Sites]([https://linkedin.com/in/yourprofile](https://sites.google.com/site/jamescloyne/))
     design:
       columns: '1'
       background:
