@@ -2,9 +2,8 @@
 #title: Bio
 ---
 
-## James Cloyne
+## About Me
 
-**About Me**
 I am a Professor of Economics at the University of California Davis. I gained my PhD from University College London and also previously worked at the Bank of England. 
 
 My main field is macroeconomics, and my research broadly focuses on monetary and fiscal policy, including the use of historical and micro data in macroeconomics.
@@ -32,4 +31,4 @@ My main field is macroeconomics, and my research broadly focuses on monetary and
 ### Links
 * [Google Scholar](https://scholar.google.com/citations?user=YOUR_ID_HERE)
 * [IDEAS/RePEc](https://ideas.repec.org/e/pcl129.html)
-* [CV](uploads/resume.pdf)
+* [CV](uploads/CloyneCV_August2024.pdf)
