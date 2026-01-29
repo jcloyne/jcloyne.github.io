@@ -31,4 +31,4 @@ My main field is macroeconomics, and my research broadly focuses on monetary and
 ### Links
 * [Google Scholar](https://scholar.google.com/citations?user=YOUR_ID_HERE)
 * [IDEAS/RePEc](https://ideas.repec.org/e/pcl129.html)
-* [CV](uploads/CloyneCV_August2024.pdf)
+* [CV](static/uploads/CloyneCV_August2024.pdf)
