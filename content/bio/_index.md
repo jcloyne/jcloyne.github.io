@@ -1,12 +1,10 @@
 ---
-title: Bio
+#title: Bio
 ---
 
 ## James Cloyne
 
-**Professor of Economics**  
-University of California, Davis
-
+**About Me**
 I am a Professor of Economics at the University of California Davis. I gained my PhD from University College London and also previously worked at the Bank of England. 
 
 My main field is macroeconomics, and my research broadly focuses on monetary and fiscal policy, including the use of historical and micro data in macroeconomics.
@@ -22,6 +20,7 @@ My main field is macroeconomics, and my research broadly focuses on monetary and
 
 ### Editorial Positions
 * **Associate Editor**, *American Economic Review*
+* **Associate Editor**, *Journal of Economic Dynamics and Control (wef Feb 2026)*
 * **Associate Editor**, *International Journal of Central Banking*
 
 ### Other Appointments
