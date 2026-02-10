@@ -1,0 +1,63 @@
+/* Align affiliations block with bio content */
+.biography-align {
+  padding-left: 240px !important;
+  padding-right: 0;
+}
+
+.biography-align ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.biography-align ul li {
+  margin-bottom: 0.1rem;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .biography-align {
+    padding-left: 0 !important;
+  }
+}
+
+/* Two-column layout for Education and Research Interests */
+@media (min-width: 768px) {
+  /* Override the education grid to single column when in two-column mode */
+  #bio .md\:col-span-8 > .mb-16 .grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Put bio content first (full width), then education and interests side-by-side */
+  #bio .md\:col-span-8 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  
+  /* Bio section spans both columns */
+  #bio .md\:col-span-8 > .mb-12 {
+    grid-column: 1 / -1;
+  }
+  
+  /* Education and Interests each take one column */  
+  #bio .md\:col-span-8 > .mb-16,
+  #bio .md\:col-span-8 > div:last-child {
+    grid-column: auto;
+    margin-bottom: 0 !important;
+  }
+}
+
+
+/* Remove links from publication citations */
+#research .hb-item-title a,
+#journal-publications .hb-item-title a,
+#other-publications .hb-item-title a,
+#research .hb-item-authors a,
+#journal-publications .hb-item-authors a,
+#other-publications .hb-item-authors a {
+  color: inherit !important;
+  text-decoration: none !important;
+  pointer-events: none !important;
+  cursor: default !important;
+}
+

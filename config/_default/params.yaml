@@ -4,28 +4,28 @@ hugoblox:
     name: James Cloyne
     type: person
     tagline: Professor of Economics | UC Davis
-    description: James Cloyne is a Professor of Economics at the University of California Davis
-    organization: James Cloyne
+    description: James Cloyne is a Professor of Economics at the Unviersity of California Davis.
+    icon: ""
   theme:
     mode: system
-    pack: default
+    pack: minimal
     colors:
       primary: ""
       secondary: ""
-      neutral: ""
+      neutral: "neutral"
   typography:
     font: sans
     size: md
   layout:
     radius: md
-    spacing: comfortable
+    spacing: compact
     avatar_shape: circle
   header:
     enable: true
     style: navbar-simple
     sticky: true
     align: center
-    search: false
+    search: true
     theme_toggle: true
   footer:
     style: minimal

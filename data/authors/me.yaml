@@ -1,6 +1,7 @@
 schema: "hugoblox/author/v1"
 slug: "me"
 is_owner: true
+avatar: me.jpg
 name:
   display: "James Cloyne"
   given: "James"
@@ -8,7 +9,24 @@ name:
 postnominals:
   - "PhD"
 role: "Professor of Economics"
-bio: "I am a Professor of Economics at the University of California Davis. I gained my PhD from University College London and also previously worked at the Bank of England. My main field is macroeconomics, and my research broadly focuses on monetary and fiscal policy, including the use of historical and micro data in macroeconomics."
+bio: "I am a Professor of Economics at the University of California Davis. I gained my PhD from University College London and also previously worked at the Bank of England. My main field is macroeconomics, and my research broadly focuses on monetary and fiscal policy, including the use of historical and micro data in macroeconomics.
+
+    - Research Associate, *National Bureau of Economic Research* (NBER)
+    - Research Fellow, *Centre for Economic Policy Research* (CEPR)
+    - Research Fellow, *Institute for Fiscal Studies* (IFS)
+    - Research Fellow, CESifo
+
+    - Associate Editor, *American Economic Review*
+    - Associate Editor, *Journal of Economic Dynamics and Control* 
+    - Associate Editor, *International Journal of Central Banking*
+    design:
+      spacing:
+        padding: ['0', '0', '20px', '0']
+      css_class: 'biography-align'
+      background:
+        color: '#f8f9fa'
+
+"
 affiliations:
   - name: "University of California, Davis"
     url: "https://www.ucdavis.edu/"
@@ -18,20 +36,30 @@ links:
   - icon: "academicons/ideas-repec"
     url: "https://ideas.repec.org/e/pcl129.html"
   - icon: "academicons/cv"
-    url: "uploads/resume.pdf"
+    url: "uploads/CloyneCV_August2024.pdf"
     label: "CV"
+  - icon: "hero/envelope"
+    url: "mailto:jcloyne@ucdavis.edu"
+    label: "Email"
 interests:
   - "Macroeconomics"
   - "Monetary Policy"
   - "Fiscal Policy"
-  - "Historical and Micro Data in Macroeconomics"
+  - "Public Finance"
+  - "Economic History"
 education:
   - degree: "PhD in Economics"
     institution: "University College London"
-    label: "Fluent"
-awards:
-  - title: "Best Paper Award"
-    awarder: "NeurIPS"
-    date: "2022-12-01"
-    summary: "Awarded for groundbreaking work on efficient training of large models."
-    icon: "hero/trophy"
+  - degree: "MSc in Economics"
+    institution: "University College London"
+  - degree: "BA in Philosophy, Politics and Economics"
+    institution: "University of Oxford"
+contact:
+  email: "jcloyne@ucdavis.edu"
+  address:
+    street: "One Shields Avenue"
+    city: "Davis"
+    region: "CA"
+    postcode: "95616"
+    country: "United States"
+

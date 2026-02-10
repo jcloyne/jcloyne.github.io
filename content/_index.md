@@ -1,21 +1,88 @@
 ---
-title: "Under Construction"
-summary: "James Cloyne"
-date: 2024-01-01  # Use today's date
+title: James Cloyne
+type: landing
 
-# This section defines what appears on the homepage
+design:
+  spacing: '3rem'
+
 sections:
-  - block: markdown
+  - block: resume-biography-3
+    id: bio
     content:
-      title: "Site Being Updated"
-      text: |
-        In the meantime, you can browse my existing webpages on **[Google Sites](https://sites.google.com/site/jamescloyne/)**
-    
+      username: me
+      text: ""
+      headings:
+        about: "Bio"
+        education: "Education"
+        interests: "Research Interests"
     design:
-      columns: '1'
+      avatar:
+        size: small
+        shape: circle
+      name:
+        size: s
       background:
-        # Optional: You can add a light grey background or keep it white
-        color: '' 
-      spacing:
-        padding: ['100px', '0', '100px', '0']
+        color: '#f8f9fa'
+  
+  - block: collection
+    id: research
+    content:
+      title: Work in Progress
+      count: 0
+      sort_by: 'Date'
+      sort_ascending: false
+      filters:
+        folders:
+          - publication
+        publication_type: 'report'
+    design:
+      view: citation
+      columns: '2'
+  
+  - block: collection
+    id: journal-publications
+    content:
+      title: Journal Publications
+      count: 0
+      sort_by: 'Date'
+      sort_ascending: false
+      filters:
+        folders:
+          - publication
+        tag: 'journal-article'
+    design:
+      view: citation
+      columns: '2'
+  
+  - block: collection
+    id: other-publications
+    content:
+      title: Other Publications
+      count: 0
+      sort_by: 'Date'
+      sort_ascending: false
+      filters:
+        folders:
+          - publication
+        tag: 'other-publication'
+    design:
+      view: citation
+      columns: '2'
+
+  - block: markdown
+    id: contact
+    content:
+      title: Contact
+      subtitle: Professor of Economics | UC Davis
+      text: |
+        James Cloyne  
+        Department of Economics  
+        University of California Davis  
+        One Shields Avenue  
+        Davis, California 95616
+
+        **Email:** [jcloyne@ucdavis.edu](mailto:jcloyne@ucdavis.edu)  
+        **Gmail:** [james.cloyne.econ@gmail.com](mailto:james.cloyne.econ@gmail.com)
+    design:
+      columns: '2'
 ---

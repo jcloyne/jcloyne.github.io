@@ -1,0 +1,75 @@
+{{/* Hugo Blox: Custom Publication List Layout */}}
+{{/* This layout organizes publications by type instead of showing a "See all" button */}}
+
+{{ define "main" }}
+<article class="article">
+  <div class="article-container">
+
+    {{/* Title */}}
+    {{ if .Title }}
+    <div class="article-title">
+      <h1>{{ .Title }}</h1>
+    </div>
+    {{ end }}
+
+    {{/* Main content */}}
+    <div class="article-content">
+      {{ .Content }}
+    </div>
+
+    {{/* Publications by Type */}}
+    
+    {{/* Journal Articles */}}
+    <section class="mt-8">
+      <h2 class="mb-4 text-2xl font-bold">Journal Publications</h2>
+      <div class="space-y-6">
+        {{ range where site.RegularPages "Section" "publication" }}
+          {{ if in (index .Params.publication_types 0) "article-journal" }}
+            <div class="pb-6 border-b border-gray-200 dark:border-gray-700">
+              <h3 class="text-xl font-semibold mb-2"><a href="{{ .RelPermalink }}" class="text-primary-600 hover:text-primary-800 dark:text-primary-400">{{ .Title }}</a></h3>
+              {{ if .Params.authors }}
+              <div class="text-gray-600 dark:text-gray-400 mb-1">
+                {{ range $index, $author := .Params.authors }}{{ if $index }}, {{ end }}<span>{{ $author }}</span>{{ end }}
+              </div>
+              {{ end }}
+              {{ if .Params.publication }}
+              <div class="text-gray-600 dark:text-gray-400 italic mb-1">{{ .Params.publication | markdownify }}</div>
+              {{ end }}
+              {{ if .Params.date }}
+              <div class="text-gray-500 text-sm">{{ .Date.Format "2006" }}</div>
+              {{ end }}
+            </div>
+          {{ end }}
+        {{ end }}
+      </div>
+    </section>
+
+    {{/* Working Papers (Reports) */}}
+    <section class="mt-12">
+      <h2 class="mb-4 text-2xl font-bold">Working Papers</h2>
+      <div class="space-y-6">
+        {{ range where site.RegularPages "Section" "publication" }}
+          {{ if in (index .Params.publication_types 0) "report" }}
+            <div class="pb-6 border-b border-gray-200 dark:border-gray-700">
+              <h3 class="text-xl font-semibold mb-2"><a href="{{ .RelPermalink }}" class="text-primary-600 hover:text-primary-800 dark:text-primary-400">{{ .Title }}</a></h3>
+              {{ if .Params.authors }}
+              <div class="text-gray-600 dark:text-gray-400 mb-1">
+                {{ range $index, $author := .Params.authors }}{{ if $index }}, {{ end }}<span>{{ $author }}</span>{{ end }}
+              </div>
+              {{ end }}
+              {{ if .Params.publication }}
+              <div class="text-gray-600 dark:text-gray-400 italic mb-1">{{ .Params.publication | markdownify }}</div>
+              {{ end }}
+              {{ if .Params.date }}
+              <div class="text-gray-500 text-sm">{{ .Date.Format "2006" }}</div>
+              {{ end }}
+            </div>
+          {{ end }}
+        {{ end }}
+      </div>
+    </section>
+
+  </div>
+</article>
+
+{{ end }}
