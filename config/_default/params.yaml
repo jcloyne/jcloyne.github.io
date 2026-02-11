@@ -19,7 +19,7 @@ hugoblox:
     font: sans
     size: md
   layout:
-    radius: md
+    radius: sm
     spacing: compact
     avatar_shape: circle
   header:
