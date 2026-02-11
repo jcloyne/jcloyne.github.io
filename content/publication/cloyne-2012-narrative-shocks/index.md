@@ -49,9 +49,17 @@ url_source: ''
 url_video: ''
 
 # Custom links (uncomment lines below)
-# links:
- - name: Shock Construction Code
-  url: "https://github.com/jcloyne/jcloyne.github.io/blob/main/static/uploads/CloyneAERTaxShocks.do"
+links:
+- name: "Shock Contruction Code"
+  url: "/uploads/CloyneAERTaxShocks.do"
+
+  links:
+- name: "Full Narrative Dataset"
+  url: "/uploads/CloyneNarrativeDataset.xlsx"
+
+  links:
+- name: "Unanticiapted Shocks"
+  url: "/uploads/Cloyne2013AERTaxSurprises.xls"
    
 
 # Publication image
