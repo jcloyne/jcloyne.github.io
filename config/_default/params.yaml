@@ -7,7 +7,7 @@ hugoblox:
     description: James Cloyne is a Professor of Economics at the University of California Davis.
   icon:
     pack: fas
-    name: chart-line
+    name: circle
   theme:
     mode: system
     pack: minimal
