@@ -61,3 +61,84 @@
   cursor: default !important;
 }
 
+/* (1) Education history as bullet list instead of bubbles */
+.education-item,
+[class*="education"] .grid > div {
+  border: none !important;
+  padding: 0.1rem 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.education-item h3,
+[class*="education"] .grid > div h3 {
+  font-size: 1rem !important;
+  font-weight: normal !important;
+}
+
+.education-item::before,
+[class*="education"] .grid > div::before {
+  content: "• " !important;
+  margin-right: 0.5rem;
+}
+
+/* (2) Larger font for publication list items */
+article h3,
+.publication-item h3,
+[class*="publication"] h3 a {
+  font-size: 1.25rem !important;
+  line-height: 1.6 !important;
+}
+
+article p,
+.publication-item p,
+[class*="publication"] p {
+  font-size: 1.05rem !important;
+}
+
+/* (3) Adjusted main name size under image */
+#bio h1,
+.biography-align h1 {
+  font-size: 1.75rem !important;
+  line-height: 1.2 !important;
+}
+
+@media (min-width: 768px) {
+  #bio h1,
+  .biography-align h1 {
+    font-size: 2rem !important;
+  }
+}
+
+/* (5) Navbar background color - use this CSS variable to customize */
+:root {
+  --navbar-bg-color: rgba(255, 255, 255, 0.95);  /* Change this color */
+}
+
+/* Apply navbar background without breaking buttons */
+header {
+  background-color: var(--navbar-bg-color) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* Reduce header/navbar height and padding */
+header {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+header nav {
+  padding: 0.25rem 0 !important;
+}
+
+/* Reduce footer size */
+footer {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  font-size: 0.875rem !important;
+}
+
+footer p, footer div {
+  margin-bottom: 0.25rem !important;
+}
+
