@@ -34,7 +34,7 @@ sections:
       filters:
         folders:
           - publication
-        publication_type: 'report'
+        tag: 'working-paper'
     design:
       view: citation
       columns: '2'
@@ -57,7 +57,7 @@ sections:
   - block: collection
     id: other-publications
     content:
-      title: Other Publications
+      title: Book Chapters and Edited Volumes
       count: 0
       sort_by: 'Date'
       sort_ascending: false
@@ -69,10 +69,25 @@ sections:
       view: citation
       columns: '2'
 
+  - block: collection
+    id: unpublished
+    content:
+      title: Unpublished Manuscripts
+      count: 0
+      sort_by: 'Date'
+      sort_ascending: false
+      filters:
+        folders:
+          - publication
+        tag: 'unpublished'
+    design:
+      view: citation
+      columns: '2'
+
   - block: markdown
     id: contact
     content:
-      title: Contact
+      title: Contact Details
       subtitle: Professor of Economics | UC Davis
       text: |
         James Cloyne  

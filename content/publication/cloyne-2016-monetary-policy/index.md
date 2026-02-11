@@ -28,7 +28,7 @@ tags: ['journal-article']
 featured: false
 
 url_pdf: 'https://www.aeaweb.org/articles?id=10.1257/mac.20150093'
-url_code: ''
+url_code: 'https://www.openicpsr.org/openicpsr/project/114114/version/V1/view'
 url_dataset: ''
 url_poster: ''
 url_project: ''

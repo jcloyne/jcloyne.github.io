@@ -26,9 +26,9 @@ publication_types:
 publication: '*American Economic Review*'
 publication_short: ''
 
-doi: ''
+doi: '10.1257/aer.103.4.1507'
 
-abstract: ''
+abstract: 'This paper provides new estimates of the macroeconomic effects of tax changes using a new narrative dataset for the United Kingdom. Identification is achieved by isolating "exogenous" tax policy changes using the Romer and Romer narrative strategy. I find that a 1 percent cut in taxes increases GDP by 0.6 percent on impact and 2.5 percent over three years. The findings are remarkably similar to Romer and Romer narrative estimates for the United States, reinforcing the view that tax changes have powerful and persistent effects. "Exogenous" tax changes are also shown to have contributed to important episodes in the UK business cycle.'
 
 # Summary. An optional shortened abstract.
 summary: ''
@@ -39,8 +39,8 @@ tags: ['journal-article']
 featured: false
 
 # Links
-url_pdf: ''
-url_code: ''
+url_pdf: 'https://www.aeaweb.org/articles?id=10.1257/aer.103.4.1507'
+url_code: 'https://www.openicpsr.org/openicpsr/project/112651/version/V1/view'
 url_dataset: ''
 url_poster: ''
 url_project: ''
@@ -50,8 +50,9 @@ url_video: ''
 
 # Custom links (uncomment lines below)
 # links:
-# - name: Custom Link
-#   url: http://example.org
+ - name: Shock Construction Code
+  url: "https://github.com/jcloyne/jcloyne.github.io/blob/main/static/uploads/CloyneAERTaxShocks.do"
+   
 
 # Publication image
 # Add an image named `featured.jpg/png` to your page's folder then add a caption below.

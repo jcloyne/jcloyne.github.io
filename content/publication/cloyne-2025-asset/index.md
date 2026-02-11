@@ -6,7 +6,7 @@ title: Asset Prices and Credit with Diagnostic Expectations
 # If you created a profile for a user (e.g. the default `admin` user at `content/authors/admin/`), 
 # write the username (folder name) here, and it will be replaced with their full name and linked to their profile.
 authors:
-- James Cloyne
+- me
 - Òscar Jordà
 - Sanjay R. Singh
 - Alan M. Taylor
@@ -26,23 +26,23 @@ publication_types:
 - report
 
 # Publication name and optional abbreviated publication name.
-publication: ''
+publication: 'Federal Reserve Bank of San Francisco Working Paper 2025-15.'
 publication_short: ''
 
-doi: ''
+doi: 'https://doi.org/10.24148/wp2025-15'
 
-abstract: ''
+abstract: 'Using long-run cross-country panel data, we document that (i) contemporaneous credit growth strongly predicts contemporaneous equity returns with positive sign, and (ii) lagged credit growth strongly predicts contemporaneous equity returns with negative sign. This correlation reversal is robust to added controls for contemporaneous and lagged consumption growth and these credit factors have greater explanatory power than the consumption factors. We find that a general equilibrium model with financial frictions and rational expectations fails to match the empirically estimated sign on regression coefficients. Diagnostic expectations, instead, help recover the empirically estimated contemporaneous sign as well as the reversal observed in the data. The two features of diagnostic expectations – extrapolation and systematic reversal – are key to improving the asset pricing implications of the general equilibrium model.'
 
 # Summary. An optional shortened abstract.
 summary: ''
 
-tags: []
+tags: [working-paper]
 
 # Display this page in a list of Featured pages?
 featured: false
 
 # Links
-url_pdf: ''
+url_pdf: 'https://www.frbsf.org/research-and-insights/publications/working-papers/2025/08/asset-prices-and-credit-with-diagnostic-expectations/'
 url_code: ''
 url_dataset: ''
 url_poster: ''
@@ -70,5 +70,3 @@ image:
 #   Otherwise, set `projects: []`.
 projects: []
 ---
-
-Add the **full text** or **supplementary notes** for the publication here using Markdown formatting.
