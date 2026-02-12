@@ -9,25 +9,15 @@ name:
 postnominals:
   - "PhD"
 role: "Professor of Economics"
-bio: |
-  I am a Professor of Economics at the University of California Davis. I gained my PhD from University College London and also previously worked at the Bank of England. My main field is macroeconomics, and my research broadly focuses on monetary and fiscal policy, including the use of historical and micro data in macroeconomics.
-
-  **Other Affiliations**
-    - *National Bureau of Economic Research* (NBER), Research Associate
-    - *Centre for Economic Policy Research* (CEPR), *Institute for Fiscal Studies* (IFS), *CESifo*, Research Fellow
-
-  **Editorial Positions**
-    - Board of Editors, *American Economic Review*
-    - Associate Editor, *Journal of Economic Dynamics and Control* 
-    - Associate Editor, *International Journal of Central Banking*
+bio: ""
 affiliations:
   - name: "University of California, Davis"
     url: "https://www.ucdavis.edu/"
 links:
   - icon: "academicons/google-scholar"
-    url: "https://scholar.google.com/citations?user=YOUR_ID_HERE"
+    url: "https://scholar.google.com/citations?user=jcloyne&hl=en"
   - icon: "academicons/ideas-repec"
-    url: "https://ideas.repec.org/e/pcl129.html"
+    url: "https://ideas.repec.org/e/pcl85.html"
   - icon: "academicons/cv"
     url: "uploads/CloyneCV_August2024.pdf"
     label: "CV"
@@ -40,13 +30,6 @@ interests:
   - "Fiscal Policy"
   - "Public Finance"
   - "Economic History"
-education:
-  - degree: "PhD in Economics"
-    institution: "University College London"
-  - degree: "MSc in Economics"
-    institution: "University College London"
-  - degree: "BA in Philosophy, Politics and Economics"
-    institution: "University of Oxford"
 contact:
   email: "jcloyne@ucdavis.edu"
   address:
@@ -55,4 +38,3 @@ contact:
     region: "CA"
     postcode: "95616"
     country: "United States"
-

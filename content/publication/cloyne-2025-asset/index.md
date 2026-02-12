@@ -3,38 +3,38 @@ title: Asset Prices and Credit with Diagnostic Expectations
 
 # Authors
 # A YAML list of author names
-# If you created a profile for a user (e.g. the default `admin` user at `content/authors/admin/`), 
+# If you created a profile for a user (e.g. the default `admin` user at `content/authors/admin/`),
 # write the username (folder name) here, and it will be replaced with their full name and linked to their profile.
 authors:
-- me
-- Òscar Jordà
-- Sanjay R. Singh
-- Alan M. Taylor
+  - me
+  - Òscar Jordà
+  - Sanjay R. Singh
+  - Alan M. Taylor
 
 # Author notes (such as 'Equal Contribution')
 # A YAML list of notes for each author in the above `authors` list
 author_notes: []
 
-date: '2025-11-01'
+date: "2025-11-01"
 
 # Date to publish webpage (NOT necessarily Bibtex publication's date).
-publishDate: '2026-02-05T17:32:24.230254Z'
+publishDate: "2026-02-05T17:32:24.230254Z"
 
 # Publication type.
 # A single CSL publication type but formatted as a YAML list (for Hugo requirements).
 publication_types:
-- report
+  - report
 
 # Publication name and optional abbreviated publication name.
-publication: 'Federal Reserve Bank of San Francisco Working Paper 2025-15.'
-publication_short: ''
+publication: "Federal Reserve Bank of San Francisco Working Paper 2025-15."
+publication_short: ""
 
-doi: 'https://doi.org/10.24148/wp2025-15'
+doi: "https://doi.org/10.24148/wp2025-15"
 
-abstract: 'Using long-run cross-country panel data, we document that (i) contemporaneous credit growth strongly predicts contemporaneous equity returns with positive sign, and (ii) lagged credit growth strongly predicts contemporaneous equity returns with negative sign. This correlation reversal is robust to added controls for contemporaneous and lagged consumption growth and these credit factors have greater explanatory power than the consumption factors. We find that a general equilibrium model with financial frictions and rational expectations fails to match the empirically estimated sign on regression coefficients. Diagnostic expectations, instead, help recover the empirically estimated contemporaneous sign as well as the reversal observed in the data. The two features of diagnostic expectations – extrapolation and systematic reversal – are key to improving the asset pricing implications of the general equilibrium model.'
+abstract: "Using long-run cross-country panel data, we document that (i) contemporaneous credit growth strongly predicts contemporaneous equity returns with positive sign, and (ii) lagged credit growth strongly predicts contemporaneous equity returns with negative sign. This correlation reversal is robust to added controls for contemporaneous and lagged consumption growth and these credit factors have greater explanatory power than the consumption factors. We find that a general equilibrium model with financial frictions and rational expectations fails to match the empirically estimated sign on regression coefficients. Diagnostic expectations, instead, help recover the empirically estimated contemporaneous sign as well as the reversal observed in the data. The two features of diagnostic expectations – extrapolation and systematic reversal – are key to improving the asset pricing implications of the general equilibrium model."
 
 # Summary. An optional shortened abstract.
-summary: ''
+summary: ""
 
 tags: [working-paper]
 
@@ -42,14 +42,14 @@ tags: [working-paper]
 featured: false
 
 # Links
-url_pdf: 'https://www.frbsf.org/research-and-insights/publications/working-papers/2025/08/asset-prices-and-credit-with-diagnostic-expectations/'
-url_code: ''
-url_dataset: ''
-url_poster: ''
-url_project: ''
-url_slides: ''
-url_source: ''
-url_video: ''
+url_pdf: "https://www.frbsf.org/research-and-insights/publications/working-papers/2025/08/asset-prices-and-credit-with-diagnostic-expectations/"
+url_code: ""
+url_dataset: ""
+url_poster: ""
+url_project: ""
+url_slides: ""
+url_source: ""
+url_video: ""
 
 # Custom links (uncomment lines below)
 # links:
@@ -59,8 +59,8 @@ url_video: ''
 # Publication image
 # Add an image named `featured.jpg/png` to your page's folder then add a caption below.
 image:
-  caption: ''
-  focal_point: ''
+  caption: ""
+  focal_point: ""
   preview_only: false
 
 # Associated Projects (optional).
@@ -69,4 +69,6 @@ image:
 #   E.g. `projects: ['internal-project']` links to `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
 projects: []
+
 ---
+

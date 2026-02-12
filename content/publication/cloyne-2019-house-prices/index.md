@@ -1,47 +1,49 @@
 ---
-title: 'The Effect of House Prices on Household Borrowing: A New Approach'
+title: "The Effect of House Prices on Household Borrowing: A New Approach"
 
 authors:
-- James Cloyne
-- Kilian Huber
-- Ethan Ilzetzki
-- Henrik Kleven
+  - James Cloyne
+  - Kilian Huber
+  - Ethan Ilzetzki
+  - Henrik Kleven
 
 author_notes: []
 
-date: '2019-06-01'
+date: "2019-06-01"
 
-publishDate: '2026-02-05T17:32:24.230254Z'
+publishDate: "2026-02-05T17:32:24.230254Z"
 
 publication_types:
-- article-journal
+  - article-journal
 
-publication: '*American Economic Review*'
-publication_short: ''
+publication: "*American Economic Review*"
+publication_short: ""
 
-doi: '10.1257/aer.20180086'
+doi: "10.1257/aer.20180086"
 
-abstract: ''
+abstract: ""
 
-summary: ''
+summary: ""
 
-tags: ['journal-article']
+tags: ["journal-article"]
 
 featured: false
 
-url_pdf: 'https://www.aeaweb.org/articles?id=10.1257/aer.20180086'
-url_code: ''
-url_dataset: ''
-url_poster: ''
-url_project: ''
-url_slides: ''
-url_source: ''
-url_video: ''
+url_pdf: "https://www.aeaweb.org/articles?id=10.1257/aer.20180086"
+url_code: ""
+url_dataset: ""
+url_poster: ""
+url_project: ""
+url_slides: ""
+url_source: ""
+url_video: ""
 
 image:
-  caption: ''
-  focal_point: ''
+  caption: ""
+  focal_point: ""
   preview_only: false
 
 projects: []
+
 ---
+
