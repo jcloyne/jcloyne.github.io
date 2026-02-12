@@ -13,10 +13,10 @@ publishDate: "2026-02-05T17:32:24.230254Z"
 publication_types:
   - article-journal
 
-publication: "*Fiscal Studies*"
+publication: "*Fiscal Studies*, Volume 39(4), 549-553"
 publication_short: ""
 
-doi: ""
+doi: "10.1111/1475-5890.12178"
 
 abstract: ""
 

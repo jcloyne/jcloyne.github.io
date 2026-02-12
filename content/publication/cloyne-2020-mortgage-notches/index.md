@@ -16,10 +16,10 @@ publishDate: "2026-02-05T17:32:24.230254Z"
 publication_types:
   - article-journal
 
-publication: "*Review of Economic Studies*"
+publication: "*Review of Economic Studies*, Volume 87(2), 656-690"
 publication_short: ""
 
-doi: ""
+doi: "10.1093/restud/rdz009"
 
 abstract: ""
 
@@ -29,7 +29,7 @@ tags: ["journal-article"]
 
 featured: false
 
-url_pdf: "https://academic.oup.com/restud/article-abstract/87/2/656/5505451"
+url_pdf: "https://academic.oup.com/restud/article-abstract/87/2/656/5505451?redirectedFrom=fulltext"
 url_code: ""
 url_dataset: ""
 url_poster: ""

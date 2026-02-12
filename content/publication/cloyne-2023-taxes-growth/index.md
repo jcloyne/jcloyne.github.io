@@ -8,14 +8,14 @@ authors:
 
 author_notes: []
 
-date: "2023-08-01"
+date: "2024-08-01"
 
 publishDate: "2026-02-05T17:32:24.230254Z"
 
 publication_types:
   - article-journal
 
-publication: "*Review of Economic Studies*"
+publication: "*Review of Economic Studies*, Volume 91(4), 388-423"
 publication_short: ""
 
 doi: "10.1093/restud/rdad081"

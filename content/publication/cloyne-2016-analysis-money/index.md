@@ -29,7 +29,7 @@ tags: ["other-publication"]
 
 featured: false
 
-url_pdf: ""
+url_pdf: "https://link.springer.com/book/10.1057/978-1-137-59335-1"
 url_code: ""
 url_dataset: ""
 url_poster: ""

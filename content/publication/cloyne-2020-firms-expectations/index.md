@@ -16,10 +16,10 @@ publishDate: "2026-02-05T17:32:24.230254Z"
 publication_types:
   - article-journal
 
-publication: "*Economic Journal*"
+publication: "*Economic Journal*, Volume 130(627), 555-586"
 publication_short: ""
 
-doi: ""
+doi: "10.1093/ej/ueaa020"
 
 abstract: ""
 

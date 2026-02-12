@@ -23,7 +23,7 @@ publication_types:
   - article-journal
 
 # Publication name and optional abbreviated publication name.
-publication: "*American Economic Review*"
+publication: "*American Economic Review*, Volume 103(4), 1507-1528"
 publication_short: ""
 
 doi: "10.1257/aer.103.4.1507"
@@ -39,7 +39,7 @@ tags: ["journal-article"]
 featured: false
 
 # Links
-url_pdf: "https://www.aeaweb.org/articles?id=10.1257/aer.103.4.1507"
+url_pdf: "http://www.aeaweb.org/articles.php?doi=10.1257/aer.103.4.1507"
 url_code: "https://www.openicpsr.org/openicpsr/project/112651/version/V1/view"
 url_dataset: ""
 url_poster: ""

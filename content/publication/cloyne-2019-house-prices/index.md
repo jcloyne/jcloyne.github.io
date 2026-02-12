@@ -16,7 +16,7 @@ publishDate: "2026-02-05T17:32:24.230254Z"
 publication_types:
   - article-journal
 
-publication: "*American Economic Review*"
+publication: "*American Economic Review*, Volume 109(6), 2104-2136"
 publication_short: ""
 
 doi: "10.1257/aer.20180086"
@@ -29,7 +29,7 @@ tags: ["journal-article"]
 
 featured: false
 
-url_pdf: "https://www.aeaweb.org/articles?id=10.1257/aer.20180086"
+url_pdf: "https://www.aeaweb.org/articles?id=10.1257/aer.20180086&&from=f"
 url_code: ""
 url_dataset: ""
 url_poster: ""

@@ -14,7 +14,7 @@ publishDate: "2026-02-05T17:32:24.230254Z"
 publication_types:
   - article-journal
 
-publication: "*American Economic Journal: Macroeconomics*"
+publication: "*American Economic Journal: Macroeconomics*, Volume 8(4), 75-102"
 publication_short: ""
 
 doi: "10.1257/mac.20150093"
@@ -28,7 +28,8 @@ tags: ["journal-article"]
 featured: false
 
 url_pdf: "https://www.aeaweb.org/articles?id=10.1257/mac.20150093"
-url_code: "https://www.openicpsr.org/openicpsr/project/114114/version/V1/view"
+url_code: "http://doi.org/10.3886/E114114V1"
+url_code: "http://doi.org/10.3886/E114114V1"
 url_dataset: ""
 url_poster: ""
 url_project: ""

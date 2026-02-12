@@ -26,12 +26,12 @@ publication_types:
   - article-journal
 
 # Publication name and optional abbreviated publication name.
-publication: "*The Manchester School*"
+publication: "*The Manchester School*, Volume 83(S1), 51-82"
 publication_short: ""
 
-doi: ""
+doi: "10.1111/manc.12098"
 
-abstract: ""
+abstract: "This paper describes a sectoral empirical model of money and credit in the UK that can be used for analysing unconventional monetary policies that affect banks’ balance sheets. The paper uses the model to assess the impact of QE on the UK economy focussing on the endogenous portfolio response of banks, financial companies and non-financial companies. The baseline results support the quantitative estimates found by other studies, but suggest the impact of QE is sensitive to the assumption about whether and to what extent QE affects bank lending."
 
 # Summary. An optional shortened abstract.
 summary: ""
@@ -42,7 +42,7 @@ tags: ["journal-article"]
 featured: false
 
 # Links
-url_pdf: ""
+url_pdf: "http://onlinelibrary.wiley.com/doi/10.1111/manc.12098/abstract"
 url_code: ""
 url_dataset: ""
 url_poster: ""

@@ -16,7 +16,7 @@ publishDate: "2026-02-05T17:32:24.230254Z"
 publication_types:
   - article-journal
 
-publication: "*Journal of the European Economic Association*"
+publication: "*Journal of the European Economic Association*, Volume 21(6), 2586-2634"
 publication_short: ""
 
 doi: "10.1093/jeea/jvad009"

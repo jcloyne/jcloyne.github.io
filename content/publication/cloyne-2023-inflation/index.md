@@ -26,10 +26,10 @@ publication_types:
   - article-journal
 
 # Publication name and optional abbreviated publication name.
-publication: "*AEA Papers and Proceedings*"
+publication: "*American Economic Association Papers and Proceedings*, Volume 113, 377-381"
 publication_short: ""
 
-doi: ""
+doi: "10.1257/pandp.20231070"
 
 abstract: ""
 
@@ -42,7 +42,7 @@ tags: ["journal-article"]
 featured: false
 
 # Links
-url_pdf: ""
+url_pdf: "https://www.aeaweb.org/articles?id=10.1257/pandp.20231070"
 url_code: ""
 url_dataset: ""
 url_poster: ""

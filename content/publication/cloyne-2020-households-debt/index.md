@@ -15,10 +15,10 @@ publishDate: "2026-02-05T17:32:24.230254Z"
 publication_types:
   - article-journal
 
-publication: "*Review of Economic Studies*"
+publication: "*Review of Economic Studies*, Volume 87(1), 102-129"
 publication_short: ""
 
-doi: ""
+doi: "10.1093/restud/rdy074"
 
 abstract: ""
 
@@ -28,7 +28,7 @@ tags: ["journal-article"]
 
 featured: false
 
-url_pdf: "https://academic.oup.com/restud/article/87/1/102/5272505"
+url_pdf: "https://doi.org/10.1093/restud/rdy074"
 url_code: ""
 url_dataset: ""
 url_poster: ""
