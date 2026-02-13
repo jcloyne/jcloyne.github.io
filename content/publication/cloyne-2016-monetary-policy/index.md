@@ -29,7 +29,6 @@ featured: false
 
 url_pdf: "https://www.aeaweb.org/articles?id=10.1257/mac.20150093"
 url_code: "http://doi.org/10.3886/E114114V1"
-url_code: "http://doi.org/10.3886/E114114V1"
 url_dataset: ""
 url_poster: ""
 url_project: ""
