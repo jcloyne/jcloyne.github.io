@@ -18,7 +18,11 @@ publication_short: ""
 
 doi: "10.1111/1475-5890.12178"
 
-abstract: ""
+abstract: "Fiscal Studies: Volume 39, Issue 4
+Special Issue on Brexit: New Evidence and Policy Perspectives
+
+Pages: 543-706
+December 2018"
 
 summary: ""
 

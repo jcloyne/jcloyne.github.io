@@ -20,7 +20,7 @@ publication_short: ""
 
 doi: "10.1093/restud/rdy074"
 
-abstract: ""
+abstract: "Using household survey data for the U.S. and the U.K., we show that the aggregate response of consumption to interest rate changes is driven by households with a mortgage. Outright home-owners do not adjust expenditure at all while renters change their spending but by less than mortgagors. Income rises for all households as interest rate cuts directly affect firm investment and household consumption, boosting aggregate demand. A crucial difference between the housing tenure groups is the composition of their balance sheets: mortgagors hold sizable illiquid assets but little liquid wealth. Our results reveal that general equilibrium effects on household income coupled with balance-sheet-driven heterogeneity in the marginal propensity to consume play a key role in the transmission of monetary policy."
 
 summary: ""
 
@@ -29,7 +29,7 @@ tags: ["journal-article"]
 featured: false
 
 url_pdf: "https://doi.org/10.1093/restud/rdy074"
-url_code: ""
+url_code: "https://doi.org/10.1093/restud/rdy074"
 url_dataset: ""
 url_poster: ""
 url_project: ""

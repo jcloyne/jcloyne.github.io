@@ -21,7 +21,7 @@ publication_short: ""
 
 doi: "10.1257/aer.20180086"
 
-abstract: ""
+abstract: "We investigate the effect of house prices on household borrowing using administrative mortgage data from the United Kingdom and a new empirical approach. The data contain household-level information on house prices and borrowing in a panel of homeowners, who refinance at regular and quasi-exogenous intervals. The data and setting allow us to develop an empirical approach that exploits house price variation coming from the idiosyncratic and exogenous timing of refinance events around the Great Recession. We present two main results. First, there is a clear and robust effect of house prices on borrowing. Second, the effect of house prices on borrowing can be explained largely by collateral effects. We study the collateral channel through a multivariate and nonparametric heterogeneity analysis of proxies for collateral and wealth effects."
 
 summary: ""
 

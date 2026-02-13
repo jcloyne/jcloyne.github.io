@@ -20,7 +20,7 @@ publication_short: ""
 
 doi: "10.1016/j.jmoneco.2024.103722"
 
-abstract: ""
+abstract: "Goods producers increase their capital expenditure and employment in response to a cut in marginal corporate income tax rates or an increase in investment tax credits. In contrast, companies in the service sector mostly use any tax windfall to increase dividend payouts. We base our conclusions on a novel measure of U.S. firm-specific tax shocks that combines changes in statutory tax rates faced by each firm with narrative identified legislated U.S. federal tax changes between 1950 and 2006."
 
 summary: ""
 

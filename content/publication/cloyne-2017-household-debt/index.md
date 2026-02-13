@@ -28,7 +28,7 @@ tags: ["journal-article"]
 featured: false
 
 url_pdf: "https://academic.oup.com/restud/article-abstract/84/1/45/2669946/Household-Debt-and-the-Dynamic-Effects-of-Income?redirectedFrom=fulltext"
-url_code: ""
+url_code: "https://academic.oup.com/restud/article-abstract/84/1/45/2669946/Household-Debt-and-the-Dynamic-Effects-of-Income?redirectedFrom=fulltext"
 url_dataset: ""
 url_poster: ""
 url_project: ""

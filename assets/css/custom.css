@@ -1,0 +1,33 @@
+.research-block-spacing {
+  padding-top: 0rem !important;
+  padding-bottom: 5rem !important;
+}
+
+.pub-list-item .prose {
+  color: blue;
+}
+
+.dark .pub-list-item .prose {
+    color: lightblue; /* Or another light color for dark mode */
+}
+
+/* Block titles inside collection blocks (e.g., "Work in Progress") */
+.flex.flex-col.items-center.max-w-prose.mx-auto > .mb-6.text-3xl.font-bold,
+.flex.flex-col.items-center.max-w-prose.mx-auto > .mb-6.text-2xl.font-bold {
+  color: #1f2937; /* dark gray */
+}
+
+.dark .flex.flex-col.items-center.max-w-prose.mx-auto > .mb-6.text-3xl.font-bold,
+.dark .flex.flex-col.items-center.max-w-prose.mx-auto > .mb-6.text-2xl.font-bold {
+  color: #ffffff;
+}
+
+.bio-block-spacing {
+  padding-top: 0rem !important;
+  margin-top: 0rem !important;
+}
+/* target inner wrapper if needed */
+.bio-block-spacing .items-start {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}

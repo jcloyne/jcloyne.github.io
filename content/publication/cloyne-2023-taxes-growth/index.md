@@ -20,7 +20,7 @@ publication_short: ""
 
 doi: "10.1093/restud/rdad081"
 
-abstract: ""
+abstract: "The impact of fiscal policy on economic activity is still a matter of great debate. And, ever since Keynes first commented on it, interwar Britain, 1918–39, has remained a particularly interesting and contentious case—not least because of its high-debt environment and turbulent business cycle. This debate has often focused on the effects of government spending, but little is known about the effects of tax changes. In fact, a number of tax reforms in the period focused on long-term and social objectives, often reflecting the personality of British Chancellors. Based on extensive historiographical research, we apply a narrative approach to the interwar period in Britain and isolate a new series of exogenous tax changes. We find that tax changes have a sizable effect on GDP, with multipliers exceeding 2 within two years. Our estimates provide new evidence on the effects of tax changes, contribute to the historical debate about fiscal policy in the interwar period and are also consistent with the sizable tax multipliers found after World War II."
 
 summary: ""
 

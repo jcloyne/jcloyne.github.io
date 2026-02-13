@@ -4,7 +4,11 @@ summary: ""
 date: "2026-02-11"
 type: "landing"
 design:
-  spacing: "3rem"
+  spacing: "1.5rem"
+  avatar:
+    size: "medium"
+    shape: "circle"
+  css_class: "bio-block-spacing"
 sections:
   - block: "resume-biography-3"
     content:
@@ -12,19 +16,19 @@ sections:
       text: |
         I am a Professor of Economics at the University of California Davis. I gained my PhD from University College London and also previously worked at the Bank of England. My main field is macroeconomics, and my research broadly focuses on monetary and fiscal policy, including the use of historical and micro data in macroeconomics.
 
-        <div class="items-start border-t border-gray-100 pt-8 mt-8 mb-12">
+        <div class="items-start border-t border-gray-100 pt-0 mt-0 mb-16">
 
         <div>
-          <h3 class="text-xl font-bold mb-3 text-black">Affiliations</h3>
-          <ul class="list-disc ml-6 space-y-1 text-m text-gray-800">
+          <h3 class="text-xl font-bold mb-3">Affiliations</h3>
+          <ul class="list-disc ml-6 space-y-1 text-m">
             <li>Research Associate 
                 <em>National Bureau of Economic Research</em>
             <li>Research Fellow 
                 <em>Center for Economic Policy Research, Institute for Fiscal Studies, CESifo</em>
           </div>
           <div>
-          <h3 class="text-xl font-bold mb-3 text-black">Associate Editor</h3>
-          <ul class="list-disc ml-6 space-y-1 text-m text-gray-800">
+          <h3 class="text-xl font-bold mb-3">Associate Editor</h3>
+          <ul class="list-disc ml-6 space-y-1 text-m">
             <li><em>American Economic Review</em></li>
             <li><em>Journal of Economic Dynamics and Control</em></li>
             <li><em>International Journal of Central Banking</em></li>
@@ -53,6 +57,7 @@ sections:
       view: "citation"
       columns: 1
       css_style: "font-size: 1.2rem;"
+      css_class: "research-block-spacing"
     id: "research"
   - block: "collection"
     content:
@@ -68,6 +73,7 @@ sections:
       view: "citation"
       columns: 1
       css_style: "font-size: 1.2rem;"
+      css_class: "research-block-spacing"
     id: "journal-publications"
   - block: "collection"
     content:
@@ -83,6 +89,7 @@ sections:
       view: "citation"
       columns: 1
       css_style: "font-size: 1.2rem;"
+      css_class: "research-block-spacing"
     id: "other-publications"
   - block: "collection"
     content:
@@ -98,6 +105,7 @@ sections:
       view: "citation"
       columns: 1
       css_style: "font-size: 1.2rem;"
+      css_class: "research-block-spacing"
     id: "unpublished"
   - block: "markdown"
     content:
@@ -114,5 +122,6 @@ sections:
         **Gmail:** [james.cloyne.econ@gmail.com](mailto:james.cloyne.econ@gmail.com)
     design:
       columns: "2"
+      css_class: "research-block-spacing"
     id: "contact"
 ---
