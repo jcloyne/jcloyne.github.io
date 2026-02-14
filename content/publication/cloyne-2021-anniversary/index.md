@@ -27,7 +27,7 @@ publication_types:
   - article-journal
 
 # Publication name and optional abbreviated publication name.
-publication: "*Fiscal Studies* Volume 40(4), 445-449,"
+publication: "*Fiscal Studies* Volume 40(4), 445-449"
 publication_short: ""
 
 doi: ""

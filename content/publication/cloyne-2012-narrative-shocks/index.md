@@ -50,7 +50,7 @@ url_video: ""
 
 # Custom links (uncomment lines below)
 links:
-  - name: "Shock Contruction Code"
+  - name: "Shock Construction Code"
     url: "/uploads/CloyneAERTaxShocks.do"
 
     links:
@@ -58,7 +58,7 @@ links:
     url: "/uploads/CloyneNarrativeDataset.xlsx"
 
     links:
-  - name: "Unanticiapted Shocks"
+  - name: "Unanticipated Shocks"
     url: "/uploads/Cloyne2013AERTaxSurprises.xls"
 
 # Publication image
