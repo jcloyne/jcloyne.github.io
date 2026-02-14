@@ -85,4 +85,14 @@ header#site-header .nav-link,
   padding-right: 0.75rem;
 }
 
+/* Disable author links that navigate/filter by author in research/citation views */
+/* Makes them non-interactive while preserving text styling */
+.research-block-spacing .li-cite-author a[href^="/authors/"],
+.pub-list-item .li-cite-author a[href^="/authors/"] {
+  pointer-events: none;
+  cursor: default;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
 
