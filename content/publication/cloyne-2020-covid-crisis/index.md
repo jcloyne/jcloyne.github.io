@@ -27,7 +27,7 @@ publication_types:
   - article-journal
 
 # Publication name and optional abbreviated publication name.
-publication: "*Fiscal Studies*"
+publication: "*Fiscal Studies* Volume 41(3), 489-492"
 publication_short: ""
 
 doi: ""
@@ -43,7 +43,7 @@ tags: ["other-publication"]
 featured: false
 
 # Links
-url_pdf: ""
+url_pdf: "https://onlinelibrary.wiley.com/doi/10.1111/1475-5890.12248"
 url_code: ""
 url_dataset: ""
 url_poster: ""

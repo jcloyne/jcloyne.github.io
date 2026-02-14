@@ -15,7 +15,7 @@ publishDate: "2026-02-05T17:32:24.230254Z"
 publication_types:
   - article-journal
 
-publication: "*Journal of Monetary Economics*"
+publication: "*Journal of Monetary Economics* Volume 149, January, 103722"
 publication_short: ""
 
 doi: "10.1016/j.jmoneco.2024.103722"

@@ -10,7 +10,7 @@ date: 2020-06-01
 publishDate: "2026-02-05T17:32:24.813101Z"
 publication_types:
   - article-journal
-publication: "*Fiscal Studies*"
+publication: "*Fiscal Studies* Volume 41(2), 257-258"
 publication_short: ""
 doi: ""
 abstract: ""
@@ -18,7 +18,7 @@ summary: ""
 tags:
   - other-publication
 featured: false
-url_pdf: ""
+url_pdf: "https://onlinelibrary.wiley.com/doi/10.1111/1475-5890.12234"
 url_code: ""
 url_dataset: ""
 url_poster: ""

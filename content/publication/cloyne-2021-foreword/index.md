@@ -1,11 +1,12 @@
 ---
-title: "Foreword: Special Issue on the COVID-19 Economic Crisis"
+title: "Special Issue on the 50th Anniversary of IFS"
 
 # Authors
 # A YAML list of author names
 # If you created a profile for a user (e.g. the default `admin` user at `content/authors/admin/`),
 # write the username (folder name) here, and it will be replaced with their full name and linked to their profile.
 authors:
+  - James Banks
   - James Cloyne
   - Monica Costa Dias
   - Matthias Parey
@@ -26,7 +27,7 @@ publication_types:
   - article-journal
 
 # Publication name and optional abbreviated publication name.
-publication: "*Fiscal Studies*"
+publication: "*Fiscal Studies* Volume 40(4), 445-449,"
 publication_short: ""
 
 doi: ""
@@ -42,7 +43,7 @@ tags: ["other-publication"]
 featured: false
 
 # Links
-url_pdf: ""
+url_pdf: "https://onlinelibrary.wiley.com/doi/10.1111/1475-5890.12208"
 url_code: ""
 url_dataset: ""
 url_poster: ""

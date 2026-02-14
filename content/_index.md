@@ -19,22 +19,21 @@ sections:
         <div class="items-start border-t border-gray-100 pt-0 mt-0 mb-16">
 
         <div>
-          <h3 class="text-xl font-bold mb-3">Affiliations</h3>
+          <h3 class="text-l font-bold mb-3">Affiliations</h3>
           <ul class="list-disc ml-6 space-y-1 text-m">
-            <li>Research Associate 
+            <li>Research Associate, 
                 <em>National Bureau of Economic Research</em>
-            <li>Research Fellow 
+            <li>Research Fellow, 
                 <em>Center for Economic Policy Research, Institute for Fiscal Studies, CESifo</em>
           </div>
           <div>
-          <h3 class="text-xl font-bold mb-3">Associate Editor</h3>
+          <h3 class="text-l font-bold mb-3">Associate Editor</h3>
           <ul class="list-disc ml-6 space-y-1 text-m">
             <li><em>American Economic Review</em></li>
             <li><em>Journal of Economic Dynamics and Control</em></li>
             <li><em>International Journal of Central Banking</em></li>
 
           </div>
-  
       headings:
         about: "Bio"
         interests: "Research Interests"
@@ -42,7 +41,9 @@ sections:
       avatar:
         size: "medium"
         shape: "circle"
+    ue: "section-bio"
     id: "bio"
+    Bi: "section-58fa4f9a"
   - block: "collection"
     content:
       title: "Work in Progress"
@@ -58,7 +59,9 @@ sections:
       columns: 1
       css_style: "font-size: 1.2rem;"
       css_class: "research-block-spacing"
+    ue: "section-research"
     id: "research"
+    Bi: "section-4b981fd7"
   - block: "collection"
     content:
       title: "Journal Publications"
@@ -74,7 +77,9 @@ sections:
       columns: 1
       css_style: "font-size: 1.2rem;"
       css_class: "research-block-spacing"
+    ue: "section-journal-publications"
     id: "journal-publications"
+    Bi: "section-76c02605"
   - block: "collection"
     content:
       title: "Book Chapters and Edited Volumes"
@@ -90,7 +95,9 @@ sections:
       columns: 1
       css_style: "font-size: 1.2rem;"
       css_class: "research-block-spacing"
+    ue: "section-other-publications"
     id: "other-publications"
+    Bi: "section-040f8a4c"
   - block: "collection"
     content:
       title: "Other Manuscripts"
@@ -106,7 +113,9 @@ sections:
       columns: 1
       css_style: "font-size: 1.2rem;"
       css_class: "research-block-spacing"
+    ue: "section-unpublished"
     id: "unpublished"
+    Bi: "section-da9bac80"
   - block: "markdown"
     content:
       title: "Contact Details"
@@ -123,5 +132,7 @@ sections:
     design:
       columns: "2"
       css_class: "research-block-spacing"
+    ue: "section-contact"
     id: "contact"
+    Bi: "section-b5043191"
 ---

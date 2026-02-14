@@ -15,7 +15,7 @@ publishDate: "2026-02-05T17:32:24.230254Z"
 publication_types:
   - article-journal
 
-publication: "*Journal of Political Economy*"
+publication: "*Journal of Political Economy* Volume 133:2, 568-603"
 publication_short: ""
 
 doi: "10.1086/732890"

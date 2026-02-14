@@ -31,3 +31,58 @@
   padding-top: 0 !important;
   margin-top: 0 !important;
 }
+
+/* Reduce the top spacing for the resume biography section */
+section#bio.hbb-section,
+.hbb-section.blox-resume-biography-3 {
+  padding-top: 1rem !important;
+}
+
+/* Remove white border / circular ring around avatar in bio */
+section#bio .avatar,
+.bio-block-spacing .avatar,
+.avatar-wrapper .avatar {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Header color variables (light + dark) */
+:root {
+  --color-header-bg: #4083d6; /* navbar background */
+  --color-header-fg: #ffffff; /* navbar text/icons */
+}
+
+/* `.dark` class is used by the theme toggler in the templates */
+/*.dark {
+/*  --color-header-bg: #161b22; /* deep dark background */
+/*  --color-header-fg: #f0f6fc; /* light foreground for contrast */
+/*}
+
+/* Apply header colors */
+header#site-header,
+.header {
+  background-color: var(--color-header-bg) !important;
+  color: var(--color-header-fg) !important;
+}
+
+/* Ensure nav links/icons inherit the header foreground */
+header#site-header a,
+.header a,
+.navbar a,
+.nav-link {
+  color: var(--color-header-fg) !important;
+}
+
+/* Make navbar buttons slightly larger to match bio body text */
+header#site-header .nav-link,
+.header .nav-link,
+.navbar .nav-link,
+.navbar a {
+  font-size: 1.25rem; /* slightly larger than default */
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+
