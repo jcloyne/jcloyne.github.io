@@ -1,0 +1,9 @@
+# axe-linter.yml
+# Check for WCAG 2.1 Level AA compliance
+
+tags:
+  - wcag2a    # WCAG 2.0 Level A
+  - wcag2aa   # WCAG 2.0 Level AA
+  - wcag21a   # WCAG 2.1 Level A (additional criteria)
+  - wcag21aa  # WCAG 2.1 Level AA (additional criteria)
+  - best-practice # Recommended best practices

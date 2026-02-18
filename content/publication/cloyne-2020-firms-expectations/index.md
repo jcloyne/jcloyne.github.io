@@ -19,8 +19,6 @@ publication_types:
 publication: "*Economic Journal*, Volume 130(627), 555-586"
 publication_short: ""
 
-doi: "10.1093/ej/ueaa020"
-
 abstract: ""
 
 summary: ""
@@ -29,21 +27,21 @@ tags: ["journal-article"]
 
 featured: false
 
-url_pdf: "https://academic.oup.com/ej/article-abstract/130/627/555/5644437"
-url_code: ""
-url_dataset: ""
-url_poster: ""
-url_project: ""
-url_slides: ""
-url_source: ""
-url_video: ""
-
 image:
   caption: ""
   focal_point: ""
   preview_only: false
 
 projects: []
+
+hugoblox:
+  ids:
+    doi: "10.1093/ej/ueaa020"
+links:
+  - name: PDF
+    url: "https://academic.oup.com/ej/article-abstract/130/627/555/5644437"
+    icon_pack: fas
+    icon: file-pdf
 
 ---
 

@@ -17,8 +17,6 @@ publication_types:
 publication: "In *Macroeconomics: Institutions, Instability and Inequality*, Carlin, W. and Soskice, D. (Eds). Oxford University Press"
 publication_short: ""
 
-doi: ""
-
 abstract: ""
 
 summary: ""
@@ -27,21 +25,18 @@ tags: ["other-publication"]
 
 featured: false
 
-url_pdf: "https://global.oup.com/ukhe/product/macroeconomics-9780198838661"
-url_code: ""
-url_dataset: ""
-url_poster: ""
-url_project: ""
-url_slides: ""
-url_source: ""
-url_video: ""
-
 image:
   caption: ""
   focal_point: ""
   preview_only: false
 
 projects: []
+
+links:
+  - name: PDF
+    url: "https://global.oup.com/ukhe/product/macroeconomics-9780198838661"
+    icon_pack: fas
+    icon: file-pdf
 
 ---
 

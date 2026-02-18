@@ -16,13 +16,12 @@ publication_types:
 publication: "*Fiscal Studies*, Volume 39(4), 549-553"
 publication_short: ""
 
-doi: "10.1111/1475-5890.12178"
+abstract: |
+  Fiscal Studies: Volume 39, Issue 4
+  Special Issue on Brexit: New Evidence and Policy Perspectives
 
-abstract: "Fiscal Studies: Volume 39, Issue 4
-Special Issue on Brexit: New Evidence and Policy Perspectives
-
-Pages: 543-706
-December 2018"
+  Pages: 543-706
+  December 2018
 
 summary: ""
 
@@ -30,21 +29,21 @@ tags: ["other-publication"]
 
 featured: false
 
-url_pdf: "https://onlinelibrary.wiley.com/doi/10.1111/1475-5890.12178"
-url_code: ""
-url_dataset: ""
-url_poster: ""
-url_project: ""
-url_slides: ""
-url_source: ""
-url_video: ""
-
 image:
   caption: ""
   focal_point: ""
   preview_only: false
 
 projects: []
+
+hugoblox:
+  ids:
+    doi: "10.1111/1475-5890.12178"
+links:
+  - name: PDF
+    url: "https://onlinelibrary.wiley.com/doi/10.1111/1475-5890.12178"
+    icon_pack: fas
+    icon: file-pdf
 
 ---
 

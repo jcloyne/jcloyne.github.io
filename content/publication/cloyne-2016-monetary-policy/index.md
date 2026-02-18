@@ -17,8 +17,6 @@ publication_types:
 publication: "*American Economic Journal: Macroeconomics*, Volume 8(4), 75-102"
 publication_short: ""
 
-doi: "10.1257/mac.20150093"
-
 abstract: ""
 
 summary: ""
@@ -27,21 +25,25 @@ tags: ["journal-article"]
 
 featured: false
 
-url_pdf: "https://www.aeaweb.org/articles?id=10.1257/mac.20150093"
-url_code: "http://doi.org/10.3886/E114114V1"
-url_dataset: ""
-url_poster: ""
-url_project: ""
-url_slides: ""
-url_source: ""
-url_video: ""
-
 image:
   caption: ""
   focal_point: ""
   preview_only: false
 
 projects: []
+
+hugoblox:
+  ids:
+    doi: "10.1257/mac.20150093"
+links:
+  - name: PDF
+    url: "https://www.aeaweb.org/articles?id=10.1257/mac.20150093"
+    icon_pack: fas
+    icon: file-pdf
+  - name: Code
+    url: "http://doi.org/10.3886/E114114V1"
+    icon_pack: fab
+    icon: github
 
 ---
 

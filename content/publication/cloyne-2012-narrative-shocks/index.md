@@ -26,8 +26,6 @@ publication_types:
 publication: "*American Economic Review*, Volume 103(4), 1507-1528"
 publication_short: ""
 
-doi: "10.1257/aer.103.4.1507"
-
 abstract: 'This paper provides new estimates of the macroeconomic effects of tax changes using a new narrative dataset for the United Kingdom. Identification is achieved by isolating "exogenous" tax policy changes using the Romer and Romer narrative strategy. I find that a 1 percent cut in taxes increases GDP by 0.6 percent on impact and 2.5 percent over three years. The findings are remarkably similar to Romer and Romer narrative estimates for the United States, reinforcing the view that tax changes have powerful and persistent effects. "Exogenous" tax changes are also shown to have contributed to important episodes in the UK business cycle.'
 
 # Summary. An optional shortened abstract.
@@ -39,27 +37,21 @@ tags: ["journal-article"]
 featured: false
 
 # Links
-url_pdf: "http://www.aeaweb.org/articles.php?doi=10.1257/aer.103.4.1507"
-url_code: "https://www.openicpsr.org/openicpsr/project/112651/version/V1/view"
-url_dataset: ""
-url_poster: ""
-url_project: ""
-url_slides: ""
-url_source: ""
-url_video: ""
-
-# Custom links (uncomment lines below)
 links:
   - name: "Shock Construction Code"
     url: "/uploads/CloyneAERTaxShocks.do"
-
-    links:
   - name: "Full Narrative Dataset"
     url: "/uploads/CloyneNarrativeDataset.xlsx"
-
-    links:
   - name: "Unanticipated Shocks"
     url: "/uploads/Cloyne2013AERTaxSurprises.xls"
+  - name: PDF
+    url: "http://www.aeaweb.org/articles.php?doi=10.1257/aer.103.4.1507"
+    icon_pack: fas
+    icon: file-pdf
+  - name: Code
+    url: "https://www.openicpsr.org/openicpsr/project/112651/version/V1/view"
+    icon_pack: fab
+    icon: github
 
 # Publication image
 # Add an image named `featured.jpg/png` to your page's folder then add a caption below.
@@ -75,6 +67,9 @@ image:
 #   Otherwise, set `projects: []`.
 projects: []
 
----
+hugoblox:
+  ids:
+    doi: "10.1257/aer.103.4.1507"
 
+---
 

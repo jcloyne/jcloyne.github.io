@@ -19,8 +19,6 @@ publication_types:
 publication: "In *Monetary Analysis at Central Banks*, Cobham, D. (Ed), Palgrave-Macmillan"
 publication_short: ""
 
-doi: ""
-
 abstract: ""
 
 summary: ""
@@ -29,21 +27,18 @@ tags: ["other-publication"]
 
 featured: false
 
-url_pdf: "https://link.springer.com/book/10.1057/978-1-137-59335-1"
-url_code: ""
-url_dataset: ""
-url_poster: ""
-url_project: ""
-url_slides: ""
-url_source: ""
-url_video: ""
-
 image:
   caption: ""
   focal_point: ""
   preview_only: false
 
 projects: []
+
+links:
+  - name: PDF
+    url: "https://link.springer.com/book/10.1057/978-1-137-59335-1"
+    icon_pack: fas
+    icon: file-pdf
 
 ---
 

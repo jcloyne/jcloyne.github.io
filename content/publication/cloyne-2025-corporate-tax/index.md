@@ -18,8 +18,6 @@ publication_types:
 publication: "*Journal of Monetary Economics* Volume 149, January, 103722"
 publication_short: ""
 
-doi: "10.1016/j.jmoneco.2024.103722"
-
 abstract: "Goods producers increase their capital expenditure and employment in response to a cut in marginal corporate income tax rates or an increase in investment tax credits. In contrast, companies in the service sector mostly use any tax windfall to increase dividend payouts. We base our conclusions on a novel measure of U.S. firm-specific tax shocks that combines changes in statutory tax rates faced by each firm with narrative identified legislated U.S. federal tax changes between 1950 and 2006."
 
 summary: ""
@@ -28,21 +26,21 @@ tags: ["journal-article"]
 
 featured: false
 
-url_pdf: "https://doi.org/10.1016/j.jmoneco.2024.103722"
-url_code: ""
-url_dataset: ""
-url_poster: ""
-url_project: ""
-url_slides: ""
-url_source: ""
-url_video: ""
-
 image:
   caption: ""
   focal_point: ""
   preview_only: false
 
 projects: []
+
+hugoblox:
+  ids:
+    doi: "10.1016/j.jmoneco.2024.103722"
+links:
+  - name: PDF
+    url: "https://doi.org/10.1016/j.jmoneco.2024.103722"
+    icon_pack: fas
+    icon: file-pdf
 
 ---
 

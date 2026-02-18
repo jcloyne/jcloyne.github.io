@@ -29,8 +29,6 @@ publication_types:
 publication: "*American Economic Association Papers and Proceedings*, Volume 113, 377-381"
 publication_short: ""
 
-doi: "10.1257/pandp.20231070"
-
 abstract: "The answer is ``yes'' for personal income taxes but ``no'' for corporate income taxes. Using narrative-identified US federal tax changes post-World War II and disaggregated sectoral data on consumer and producer prices, we show that higher average personal income tax rates lower prices across a broad range of sectors, but higher average corporate tax rates do not. There is also significant sectoral heterogeneity in the size of the effects. Finally, only personal tax increases lower inflation expectations, while corporate tax increases lead to persistent declines in stock prices. Our results are consistent with personal taxes affecting aggregate demand and corporate taxes persistently affecting supply conditions."
 
 # Summary. An optional shortened abstract.
@@ -42,14 +40,6 @@ tags: ["journal-article"]
 featured: false
 
 # Links
-url_pdf: "https://www.aeaweb.org/articles?id=10.1257/pandp.20231070"
-url_code: "https://www.aeaweb.org/articles?id=10.1257/pandp.20231070"
-url_dataset: ""
-url_poster: ""
-url_project: ""
-url_slides: ""
-url_source: ""
-url_video: ""
 
 # Custom links (uncomment lines below)
 # links:
@@ -69,6 +59,19 @@ image:
 #   E.g. `projects: ['internal-project']` links to `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
 projects: []
+
+hugoblox:
+  ids:
+    doi: "10.1257/pandp.20231070"
+links:
+  - name: PDF
+    url: "https://www.aeaweb.org/articles?id=10.1257/pandp.20231070"
+    icon_pack: fas
+    icon: file-pdf
+  - name: Code
+    url: "https://www.aeaweb.org/articles?id=10.1257/pandp.20231070"
+    icon_pack: fab
+    icon: github
 
 ---
 

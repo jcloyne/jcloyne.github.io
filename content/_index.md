@@ -20,7 +20,7 @@ sections:
 
         <div>
           <h3 class="text-l font-bold mb-3">Affiliations</h3>
-          <ul class="list-disc ml-6 space-y-1 text-m">
+          <ul class="list-disc ml-6 space-y-0.25 text-m">
             <li>Research Associate, 
                 <em>National Bureau of Economic Research</em>
             <li>Research Fellow, 
@@ -28,7 +28,7 @@ sections:
           </div>
           <div>
           <h3 class="text-l font-bold mb-3">Associate Editor</h3>
-          <ul class="list-disc ml-6 space-y-1 text-m">
+          <ul class="list-disc ml-6 space-y-0.25 text-m">
             <li><em>American Economic Review</em></li>
             <li><em>Journal of Economic Dynamics and Control</em></li>
             <li><em>International Journal of Central Banking</em></li>
@@ -135,4 +135,6 @@ sections:
     ue: "section-contact"
     id: "contact"
     Bi: "section-b5043191"
+
 ---
+

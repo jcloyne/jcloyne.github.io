@@ -30,7 +30,6 @@ publication_types:
 publication: "*Fiscal Studies* Volume 40(4), 445-449"
 publication_short: ""
 
-doi: ""
 
 abstract: ""
 
@@ -43,14 +42,6 @@ tags: ["other-publication"]
 featured: false
 
 # Links
-url_pdf: "https://onlinelibrary.wiley.com/doi/10.1111/1475-5890.12208"
-url_code: ""
-url_dataset: ""
-url_poster: ""
-url_project: ""
-url_slides: ""
-url_source: ""
-url_video: ""
 
 # Custom links (uncomment lines below)
 # links:
@@ -71,4 +62,9 @@ image:
 #   Otherwise, set `projects: []`.
 projects: []
 
+links:
+  - name: PDF
+    url: "https://onlinelibrary.wiley.com/doi/10.1111/1475-5890.12208"
+    icon_pack: fas
+    icon: file-pdf
 ---

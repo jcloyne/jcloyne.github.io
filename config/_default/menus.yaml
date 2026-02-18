@@ -6,17 +6,17 @@
 main:
   - name: Bio
     identifier: 079ae508
-    url: /#bio
+    url: "/#bio"
     weight: 10
   - name: Working Papers
     identifier: latest-work
-    url: /#latest
+    url: "/#latest"
     weight: 20
   - name: Publications
     identifier: 33d34628
-    url: /#journal-publications
+    url: "/#journal-publications"
     weight: 30
   - name: Contact
     identifier: 58f09f2d
-    url: /#contact
+    url: "/#contact"
     weight: 50

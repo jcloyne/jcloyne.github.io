@@ -29,8 +29,6 @@ publication_types:
 publication: "Federal Reserve Bank of San Francisco Working Paper 2025-15."
 publication_short: ""
 
-doi: "https://doi.org/10.24148/wp2025-15"
-
 abstract: "Using long-run cross-country panel data, we document that (i) contemporaneous credit growth strongly predicts contemporaneous equity returns with positive sign, and (ii) lagged credit growth strongly predicts contemporaneous equity returns with negative sign. This correlation reversal is robust to added controls for contemporaneous and lagged consumption growth and these credit factors have greater explanatory power than the consumption factors. We find that a general equilibrium model with financial frictions and rational expectations fails to match the empirically estimated sign on regression coefficients. Diagnostic expectations, instead, help recover the empirically estimated contemporaneous sign as well as the reversal observed in the data. The two features of diagnostic expectations – extrapolation and systematic reversal – are key to improving the asset pricing implications of the general equilibrium model."
 
 # Summary. An optional shortened abstract.
@@ -42,14 +40,6 @@ tags: [working-paper]
 featured: false
 
 # Links
-url_pdf: "https://www.frbsf.org/research-and-insights/publications/working-papers/2025/08/asset-prices-and-credit-with-diagnostic-expectations/"
-url_code: ""
-url_dataset: ""
-url_poster: ""
-url_project: ""
-url_slides: ""
-url_source: ""
-url_video: ""
 
 # Custom links (uncomment lines below)
 # links:
@@ -69,6 +59,15 @@ url_video: ""
 #   E.g. `projects: ['internal-project']` links to `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
 projects: []
+
+hugoblox:
+  ids:
+    doi: "10.24148/wp2025-15"
+links:
+  - name: PDF
+    url: "https://www.frbsf.org/research-and-insights/publications/working-papers/2025/08/asset-prices-and-credit-with-diagnostic-expectations/"
+    icon_pack: fas
+    icon: file-pdf
 
 ---
 

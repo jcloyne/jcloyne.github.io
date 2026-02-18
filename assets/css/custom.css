@@ -89,7 +89,8 @@ header#site-header .nav-link,
 /* Disable author links that navigate/filter by author in research/citation views */
 /* Makes them non-interactive while preserving text styling */
 .research-block-spacing .li-cite-author a[href^="/authors/"],
-.pub-list-item .li-cite-author a[href^="/authors/"] {
+.pub-list-item .li-cite-author a[href^="/authors/"],
+a.no-underline[href^="/authors/"] {
   pointer-events: none;
   cursor: default;
   color: inherit !important;

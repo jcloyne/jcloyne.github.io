@@ -31,8 +31,6 @@ publication_types:
 publication: "*International Journal of Central Banking*, Volume 12(3), 161-195"
 publication_short: ""
 
-doi: ""
-
 abstract: "This paper investigates the effect of quantitative easing (QE) and other unconventional monetary policies on price and wage growth expectations of UK manufacturing firms. To identify the effect of QE on firms' expectations, we use a novel approach of combining microeconometric data with macroeconomic shocks: QE is exogenous to inflation expectations of individual firms, and so are other macroeconomic developments like aggregate inflation or GDP growth. We find that firms' price and wage inflation expectations increase by 0.22 percentage points in response to £50 billion of QE, implying that inflation expectations are part of the transmission mechanism of QE. In contrast, we find a positive but small and insignificant effect of forward guidance on price and wage inflation expectations."
 
 # Summary. An optional shortened abstract.
@@ -44,14 +42,6 @@ tags: ["journal-article"]
 featured: false
 
 # Links
-url_pdf: "http://www.ijcb.org/journal/ijcb16q3a4.htm"
-url_code: ""
-url_dataset: ""
-url_poster: ""
-url_project: ""
-url_slides: ""
-url_source: ""
-url_video: ""
 
 # Custom links (uncomment lines below)
 # links:
@@ -71,6 +61,12 @@ image:
 #   E.g. `projects: ['internal-project']` links to `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
 projects: []
+
+links:
+  - name: PDF
+    url: "http://www.ijcb.org/journal/ijcb16q3a4.htm"
+    icon_pack: fas
+    icon: file-pdf
 
 ---
 
