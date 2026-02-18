@@ -24,7 +24,7 @@ sections:
             <li>Research Associate, 
                 <em>National Bureau of Economic Research</em>
             <li>Research Fellow, 
-                <em>Center for Economic Policy Research, Institute for Fiscal Studies, CESifo</em>
+                <em>Centre for Economic Policy Research, Institute for Fiscal Studies, CESifo</em>
           </div>
           <div>
           <h3 class="text-l font-bold mb-3">Associate Editor</h3>
