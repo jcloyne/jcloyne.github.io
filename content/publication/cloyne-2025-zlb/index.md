@@ -44,5 +44,7 @@ image:
 
 projects: []
 
+sharing: false
+
 ---
 

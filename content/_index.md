@@ -46,7 +46,7 @@ sections:
     Bi: "section-58fa4f9a"
   - block: "collection"
     content:
-      title: "Work in Progress"
+      title: "Latest Research"
       count: 0
       sort_by: "Date"
       sort_ascending: false
@@ -60,11 +60,11 @@ sections:
       css_style: "font-size: 1.2rem;"
       css_class: "research-block-spacing"
     ue: "section-research"
-    id: "research"
+    id: "latest"
     Bi: "section-4b981fd7"
   - block: "collection"
     content:
-      title: "Journal Publications"
+      title: "Publications"
       count: 0
       sort_by: "Date"
       sort_ascending: false

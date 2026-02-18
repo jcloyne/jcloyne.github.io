@@ -77,4 +77,4 @@ projects: []
 
 ---
 
-Add the **full text** or **supplementary notes** for the publication here using Markdown formatting.
+

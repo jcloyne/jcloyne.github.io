@@ -5,11 +5,22 @@
 
 main:
   - name: Bio
-    url: "/#bio"
+    identifier: 079ae508
+    url: /#bio
     weight: 10
-  - name: Research
-    url: "/#research"
+  - name: Latest
+    identifier: latest-work
+    url: /#latest
+    weight: 20
+  - name: Publications
+    identifier: 33d34628
+    url: /#journal-publications
     weight: 30
+  - name: Other Articles
+    identifier: chapters-and-other-articles
+    url: /#other-publications
+    weight: 40
   - name: Contact
-    url: "/#contact"
+    identifier: 58f09f2d
+    url: /#contact
     weight: 50

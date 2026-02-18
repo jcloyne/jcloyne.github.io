@@ -1,6 +1,6 @@
 .research-block-spacing {
-  padding-top: 0rem !important;
-  padding-bottom: 5rem !important;
+  padding-top: 3rem !important;
+  padding-bottom: 2rem !important;
 }
 
 .pub-list-item .prose {
@@ -36,6 +36,7 @@
 section#bio.hbb-section,
 .hbb-section.blox-resume-biography-3 {
   padding-top: 1rem !important;
+  padding-bottom: 0rem !important;
 }
 
 /* Remove white border / circular ring around avatar in bio */
@@ -95,4 +96,7 @@ header#site-header .nav-link,
   text-decoration: none !important;
 }
 
-
+/* This targets the specific container on your live site */
+.share-box {
+  display: none !important;
+}
