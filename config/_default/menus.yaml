@@ -8,7 +8,7 @@ main:
     identifier: 079ae508
     url: /#bio
     weight: 10
-  - name: Latest
+  - name: Working Papers
     identifier: latest-work
     url: /#latest
     weight: 20
@@ -16,10 +16,6 @@ main:
     identifier: 33d34628
     url: /#journal-publications
     weight: 30
-  - name: Other Articles
-    identifier: chapters-and-other-articles
-    url: /#other-publications
-    weight: 40
   - name: Contact
     identifier: 58f09f2d
     url: /#contact

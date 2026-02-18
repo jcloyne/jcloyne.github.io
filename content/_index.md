@@ -46,7 +46,7 @@ sections:
     Bi: "section-58fa4f9a"
   - block: "collection"
     content:
-      title: "Latest Research"
+      title: "Working Papers"
       count: 0
       sort_by: "Date"
       sort_ascending: false
