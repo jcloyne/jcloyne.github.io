@@ -36,8 +36,6 @@ projects: []
 links:
   - name: PDF
     url: "https://www.nber.org/papers/w30971"
-    icon_pack: fas
-    icon: file-pdf
 
 ---
 

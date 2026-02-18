@@ -40,8 +40,6 @@ hugoblox:
 links:
   - name: PDF
     url: "https://academic.oup.com/restud/article-abstract/87/2/656/5505451?redirectedFrom=fulltext"
-    icon_pack: fas
-    icon: file-pdf
 
 ---
 

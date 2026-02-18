@@ -66,12 +66,8 @@ hugoblox:
 links:
   - name: PDF
     url: "https://www.aeaweb.org/articles?id=10.1257/pandp.20231070"
-    icon_pack: fas
-    icon: file-pdf
   - name: Code
     url: "https://www.aeaweb.org/articles?id=10.1257/pandp.20231070"
-    icon_pack: fab
-    icon: github
 
 ---
 

@@ -37,8 +37,6 @@ projects: []
 links:
   - name: PDF
     url: "http://www.josebamartinez.com/pdf/CMMS.pdf"
-    icon_pack: fas
-    icon: file-pdf
 
 ---
 

@@ -41,8 +41,6 @@ hugoblox:
 links:
   - name: PDF
     url: "https://doi.org/10.1086/732890"
-    icon_pack: fas
-    icon: file-pdf
 
 ---
 

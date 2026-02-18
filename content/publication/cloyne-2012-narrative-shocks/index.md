@@ -46,12 +46,8 @@ links:
     url: "/uploads/Cloyne2013AERTaxSurprises.xls"
   - name: PDF
     url: "http://www.aeaweb.org/articles.php?doi=10.1257/aer.103.4.1507"
-    icon_pack: fas
-    icon: file-pdf
   - name: Code
     url: "https://www.openicpsr.org/openicpsr/project/112651/version/V1/view"
-    icon_pack: fab
-    icon: github
 
 # Publication image
 # Add an image named `featured.jpg/png` to your page's folder then add a caption below.

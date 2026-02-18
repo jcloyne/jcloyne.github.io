@@ -40,8 +40,6 @@ hugoblox:
 links:
   - name: PDF
     url: "https://www.aeaweb.org/articles?id=10.1257/aer.20180086&&from=f"
-    icon_pack: fas
-    icon: file-pdf
 
 ---
 

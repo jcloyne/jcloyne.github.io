@@ -65,8 +65,6 @@ projects: []
 links:
   - name: PDF
     url: "http://www.ijcb.org/journal/ijcb16q3a4.htm"
-    icon_pack: fas
-    icon: file-pdf
 
 ---
 

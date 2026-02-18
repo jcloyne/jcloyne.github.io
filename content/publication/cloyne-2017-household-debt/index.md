@@ -38,12 +38,8 @@ hugoblox:
 links:
   - name: PDF
     url: "https://academic.oup.com/restud/article-abstract/84/1/45/2669946/Household-Debt-and-the-Dynamic-Effects-of-Income?redirectedFrom=fulltext"
-    icon_pack: fas
-    icon: file-pdf
   - name: Code
     url: "https://academic.oup.com/restud/article-abstract/84/1/45/2669946/Household-Debt-and-the-Dynamic-Effects-of-Income?redirectedFrom=fulltext"
-    icon_pack: fab
-    icon: github
 
 ---
 

@@ -66,8 +66,6 @@ hugoblox:
 links:
   - name: PDF
     url: "http://onlinelibrary.wiley.com/doi/10.1111/manc.12098/abstract"
-    icon_pack: fas
-    icon: file-pdf
 
 ---
 

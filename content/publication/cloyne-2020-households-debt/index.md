@@ -39,12 +39,8 @@ hugoblox:
 links:
   - name: PDF
     url: "https://doi.org/10.1093/restud/rdy074"
-    icon_pack: fas
-    icon: file-pdf
   - name: Code
     url: "https://doi.org/10.1093/restud/rdy074"
-    icon_pack: fab
-    icon: github
 
 ---
 

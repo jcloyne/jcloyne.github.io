@@ -37,8 +37,6 @@ projects: []
 links:
   - name: PDF
     url: "https://link.springer.com/book/10.1057/978-1-137-59335-1"
-    icon_pack: fas
-    icon: file-pdf
 
 ---
 

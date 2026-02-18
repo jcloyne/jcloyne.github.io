@@ -38,12 +38,8 @@ hugoblox:
 links:
   - name: PDF
     url: "https://www.aeaweb.org/articles?id=10.1257/mac.20150093"
-    icon_pack: fas
-    icon: file-pdf
   - name: Code
     url: "http://doi.org/10.3886/E114114V1"
-    icon_pack: fab
-    icon: github
 
 ---
 

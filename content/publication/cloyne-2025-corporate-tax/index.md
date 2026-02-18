@@ -39,8 +39,6 @@ hugoblox:
 links:
   - name: PDF
     url: "https://doi.org/10.1016/j.jmoneco.2024.103722"
-    icon_pack: fas
-    icon: file-pdf
 
 ---
 

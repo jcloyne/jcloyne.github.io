@@ -79,7 +79,7 @@ header#site-header .nav-link,
 .header .nav-link,
 .navbar .nav-link,
 .navbar a {
-  font-size: 1.25rem; /* slightly larger than default */
+  font-size: 1.15rem; /* slightly larger than default */
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 0.75rem;

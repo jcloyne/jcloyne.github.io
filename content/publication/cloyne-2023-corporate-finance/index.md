@@ -40,12 +40,8 @@ hugoblox:
 links:
   - name: PDF
     url: "https://doi.org/10.1093/jeea/jvad009"
-    icon_pack: fas
-    icon: file-pdf
   - name: Code
     url: "https://academic.oup.com/jeea/article/21/6/2586/7080145#supplementary-data"
-    icon_pack: fab
-    icon: github
 
 ---
 

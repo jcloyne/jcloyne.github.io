@@ -42,8 +42,6 @@ hugoblox:
 links:
   - name: PDF
     url: "https://onlinelibrary.wiley.com/doi/10.1111/1475-5890.12178"
-    icon_pack: fas
-    icon: file-pdf
 
 ---
 

@@ -35,8 +35,6 @@ projects: []
 links:
   - name: PDF
     url: "https://global.oup.com/ukhe/product/macroeconomics-9780198838661"
-    icon_pack: fas
-    icon: file-pdf
 
 ---
 

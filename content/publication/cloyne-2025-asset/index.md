@@ -66,8 +66,6 @@ hugoblox:
 links:
   - name: PDF
     url: "https://www.frbsf.org/research-and-insights/publications/working-papers/2025/08/asset-prices-and-credit-with-diagnostic-expectations/"
-    icon_pack: fas
-    icon: file-pdf
 
 ---
 
