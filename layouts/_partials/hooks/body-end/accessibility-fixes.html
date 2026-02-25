@@ -39,24 +39,15 @@
 
     /* ------------------------------------------------------------------
        4. Theme Toggle Button Label (WCAG 4.1.2)
-          The button has only title="appearance"; add aria-label so
-          screen readers announce a clear action.
+          aria-label and title are now set directly in navbar.html;
+          no JS override needed.
     ------------------------------------------------------------------ */
-    var themeToggle = document.querySelector('button.theme-toggle');
-    if (themeToggle && !themeToggle.getAttribute('aria-label')) {
-      themeToggle.setAttribute('aria-label', 'Toggle dark or light mode');
-    }
 
     /* ------------------------------------------------------------------
        5. Search Toggle Button Label (WCAG 4.1.2)
-          The search trigger has aria-label="toggle search"; expand it
-          to a more descriptive label.
+          aria-label and aria-haspopup are now set directly in navbar.html;
+          no JS override needed.
     ------------------------------------------------------------------ */
-    var searchToggle = document.querySelector('[data-search-toggle]');
-    if (searchToggle) {
-      searchToggle.setAttribute('aria-label', 'Open site search');
-      searchToggle.setAttribute('aria-haspopup', 'dialog');
-    }
 
     /* ------------------------------------------------------------------
        5b. Search Input Accessible Label (WCAG 1.3.1 / 4.1.2 — Issue #5)
@@ -152,24 +143,10 @@
     ------------------------------------------------------------------ */
 
     /* ------------------------------------------------------------------
-       11. Fix Duplicate Creative Commons Anchor in Footer (WCAG 4.1.1)
-           The theme template erroneously outputs two sequential opening
-           <a aria-label="Creative Commons"> tags. Remove the orphaned one.
+       11. Duplicate Creative Commons Anchor
+           Previously patched via JS; now fixed in site_footer_license.html
+           template override (duplicate opening <a> tag removed at source).
     ------------------------------------------------------------------ */
-    var ccLinks = document.querySelectorAll('a[aria-label="Creative Commons"]');
-    if (ccLinks.length >= 2) {
-      // The first tag is orphaned (no closing content); remove it.
-      var first = ccLinks[0];
-      // Only remove if it appears to contain the second <a> as a child
-      // (i.e. the browser placed the nested anchor content inside it)
-      if (first.querySelector('a[aria-label="Creative Commons"]')) {
-        // Unwrap: move children out then remove the outer shell
-        while (first.firstChild) {
-          first.parentNode.insertBefore(first.firstChild, first);
-        }
-        first.parentNode.removeChild(first);
-      }
-    }
 
   } // end applyAccessibilityFixes
 
