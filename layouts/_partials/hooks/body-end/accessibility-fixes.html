@@ -1,0 +1,188 @@
+{{/* WCAG 2.1 AA Accessibility Fixes
+     Injected at the end of <body> to patch ARIA attributes and landmarks
+     that cannot be set directly through Hugo Blox theme templates.
+*/}}
+<script>
+(function () {
+  'use strict';
+
+  function applyAccessibilityFixes() {
+
+    /* ------------------------------------------------------------------
+       1. Skip Navigation Link (WCAG 2.4.1 – Bypass Blocks)
+          Prepend a visually-hidden link that becomes visible on focus,
+          letting keyboard users jump past the repeated navigation.
+    ------------------------------------------------------------------ */
+    if (!document.querySelector('.skip-to-main')) {
+      var skipLink = document.createElement('a');
+      skipLink.href = '#main-content';
+      skipLink.className = 'skip-to-main';
+      skipLink.textContent = 'Skip to main content';
+      document.body.insertBefore(skipLink, document.body.firstChild);
+    }
+
+    /* ------------------------------------------------------------------
+       2. Main Content Landmark (WCAG 1.3.6 / 4.1.2)
+          Hugo Blox renders the page body as a <div>; promote it to a
+          proper <main> landmark so AT users can navigate to it.
+    ------------------------------------------------------------------ */
+    var pageBody = document.querySelector('.page-body');
+    if (pageBody) {
+      pageBody.setAttribute('id', 'main-content');
+      pageBody.setAttribute('role', 'main');
+      pageBody.setAttribute('tabindex', '-1'); // allows skip link to programmatically focus it
+    }
+
+    /* ------------------------------------------------------------------
+       3. Navigation Landmark Label (WCAG 4.1.2)
+          A page with a single <nav> still benefits from an aria-label
+          so AT announces "Main navigation" rather than just "navigation".
+    ------------------------------------------------------------------ */
+    var siteNav = document.querySelector('nav.navbar');
+    if (siteNav && !siteNav.getAttribute('aria-label')) {
+      siteNav.setAttribute('aria-label', 'Main navigation');
+    }
+
+    /* ------------------------------------------------------------------
+       4. Theme Toggle Button Label (WCAG 4.1.2)
+          The button has only title="appearance"; add aria-label so
+          screen readers announce a clear action.
+    ------------------------------------------------------------------ */
+    var themeToggle = document.querySelector('button.theme-toggle');
+    if (themeToggle && !themeToggle.getAttribute('aria-label')) {
+      themeToggle.setAttribute('aria-label', 'Toggle dark or light mode');
+    }
+
+    /* ------------------------------------------------------------------
+       5. Search Toggle Button Label (WCAG 4.1.2)
+          The search trigger has aria-label="toggle search"; expand it
+          to a more descriptive label.
+    ------------------------------------------------------------------ */
+    var searchToggle = document.querySelector('[data-search-toggle]');
+    if (searchToggle) {
+      searchToggle.setAttribute('aria-label', 'Open site search');
+      searchToggle.setAttribute('aria-haspopup', 'dialog');
+    }
+
+    /* ------------------------------------------------------------------
+       6. Search Close Button Label (WCAG 4.1.2)
+          The ✕ close button inside the search modal has no aria-label.
+    ------------------------------------------------------------------ */
+    var searchModal = document.querySelector('.fixed.inset-0');
+    if (searchModal) {
+      searchModal.querySelectorAll('button').forEach(function (btn) {
+        // The close button contains an × SVG and no text; detect by child path
+        var svgPath = btn.querySelector('path[d*="M6 18L18 6"]');
+        if (svgPath && !btn.getAttribute('aria-label')) {
+          btn.setAttribute('aria-label', 'Close search');
+        }
+      });
+      // Add role="dialog" so AT announces the modal correctly
+      var searchPanel = searchModal.querySelector('.mx-4.overflow-hidden');
+      if (searchPanel && !searchPanel.getAttribute('role')) {
+        searchPanel.setAttribute('role', 'dialog');
+        searchPanel.setAttribute('aria-label', 'Site search');
+        searchPanel.setAttribute('aria-modal', 'true');
+      }
+    }
+
+    /* ------------------------------------------------------------------
+       7. Social / Biography Link Labels (WCAG 4.1.2)
+          Hugo Blox generates aria-label from the internal icon name
+          (e.g. "academicons/google-scholar"). Replace with human-readable
+          descriptions.
+    ------------------------------------------------------------------ */
+    var iconLabelMap = {
+      'academicons/google-scholar': 'Google Scholar profile (opens in new tab)',
+      'academicons/ideas-repec':    'IDEAS/RePEC profile (opens in new tab)',
+      'academicons/cv':             'Download CV PDF (opens in new tab)',
+      'hero/envelope':              'Send email'
+    };
+    document.querySelectorAll('[aria-label]').forEach(function (el) {
+      var current = el.getAttribute('aria-label');
+      if (iconLabelMap[current]) {
+        el.setAttribute('aria-label', iconLabelMap[current]);
+      }
+    });
+
+    /* ------------------------------------------------------------------
+       8. Decorative SVG aria-hidden (WCAG 4.1.2)
+          SVGs that are purely decorative (inside a labelled button or
+          link) should be hidden from AT to avoid redundant announcements.
+    ------------------------------------------------------------------ */
+    document.querySelectorAll('button[aria-label] svg, a[aria-label] svg').forEach(function (svg) {
+      svg.setAttribute('aria-hidden', 'true');
+      svg.setAttribute('focusable', 'false');
+    });
+    // Also hide the decorative icon-circles next to section headings
+    document.querySelectorAll('.flex-shrink-0.w-12.h-12 svg').forEach(function (svg) {
+      svg.setAttribute('aria-hidden', 'true');
+      svg.setAttribute('focusable', 'false');
+    });
+
+    /* ------------------------------------------------------------------
+       9. Non-functional Author Links – Remove from Keyboard Tab Order
+          (WCAG 2.1.1 – Keyboard)
+          CSS disables pointer-events on author links, making them visually
+          inert. Keyboard users would still reach them via Tab. Set
+          tabindex="-1" and aria-hidden so they are skipped entirely.
+          The visible author name text is preserved via a sibling span.
+    ------------------------------------------------------------------ */
+    var authorSelectors = [
+      '.li-cite-author a[href^="/authors/"]',
+      '.pub-list-item .li-cite-author a[href^="/authors/"]',
+      'a.no-underline[href^="/authors/"]'
+    ];
+    document.querySelectorAll(authorSelectors.join(',')).forEach(function (a) {
+      a.setAttribute('tabindex', '-1');
+      a.setAttribute('aria-hidden', 'true');
+    });
+
+    /* ------------------------------------------------------------------
+       10. Section Title Heading Semantics (WCAG 1.3.1 – Info and Relationships)
+           Hugo Blox collection block titles are rendered as styled <div>s,
+           not semantic heading elements. Add role="heading" aria-level="2"
+           so AT treats them as section headings at the correct level.
+           This matches the visual hierarchy (bio h1 → section h2).
+    ------------------------------------------------------------------ */
+    document.querySelectorAll(
+      '.flex.flex-col.items-center.max-w-prose.mx-auto .mb-6.text-3xl.font-bold, ' +
+      '.flex.flex-col.items-center.max-w-prose.mx-auto .mb-6.text-2xl.font-bold'
+    ).forEach(function (el) {
+      if (!el.getAttribute('role')) {
+        el.setAttribute('role', 'heading');
+        el.setAttribute('aria-level', '2');
+      }
+    });
+
+    /* ------------------------------------------------------------------
+       11. Fix Duplicate Creative Commons Anchor in Footer (WCAG 4.1.1)
+           The theme template erroneously outputs two sequential opening
+           <a aria-label="Creative Commons"> tags. Remove the orphaned one.
+    ------------------------------------------------------------------ */
+    var ccLinks = document.querySelectorAll('a[aria-label="Creative Commons"]');
+    if (ccLinks.length >= 2) {
+      // The first tag is orphaned (no closing content); remove it.
+      var first = ccLinks[0];
+      // Only remove if it appears to contain the second <a> as a child
+      // (i.e. the browser placed the nested anchor content inside it)
+      if (first.querySelector('a[aria-label="Creative Commons"]')) {
+        // Unwrap: move children out then remove the outer shell
+        while (first.firstChild) {
+          first.parentNode.insertBefore(first.firstChild, first);
+        }
+        first.parentNode.removeChild(first);
+      }
+    }
+
+  } // end applyAccessibilityFixes
+
+  // Run as soon as DOM is ready (before full page load)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyAccessibilityFixes);
+  } else {
+    applyAccessibilityFixes();
+  }
+
+})();
+</script>

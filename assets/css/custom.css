@@ -49,7 +49,9 @@ section#bio .avatar,
 
 /* Header color variables (light + dark) */
 :root {
-  --color-header-bg: #4083d6; /* navbar background */
+  /* Darkened from #4083d6 to meet WCAG 2.1 AA contrast (≥4.5:1) with white text.
+     #2a62a8 achieves ≈6.1:1 contrast ratio. */
+  --color-header-bg: #2a62a8; /* navbar background */
   --color-header-fg: #ffffff; /* navbar text/icons */
 }
 
@@ -100,4 +102,70 @@ a.no-underline[href^="/authors/"] {
 /* This targets the specific container on your live site */
 .share-box {
   display: none !important;
+}
+
+/* ============================================================
+   WCAG 2.1 AA Accessibility Additions
+   ============================================================ */
+
+/* 1. Skip Navigation Link (WCAG 2.4.1 – Bypass Blocks)
+      Visually hidden until focused by keyboard. */
+.skip-to-main {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -999;
+  text-decoration: none;
+}
+.skip-to-main:focus {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: auto;
+  padding: 0.75rem 1.5rem;
+  background: #000000;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  z-index: 10000;
+  overflow: visible;
+  border-radius: 0 0 0.5rem 0.5rem;
+  text-decoration: none;
+  outline: 3px solid #ffffff;
+}
+
+/* 2. Focus Visible Indicator (WCAG 2.4.7 – Focus Visible)
+      Provides a clear 3px outline for all keyboard-focused elements. */
+:focus-visible {
+  outline: 3px solid #005fcc !important;
+  outline-offset: 2px !important;
+  border-radius: 2px;
+}
+
+/* Remove outline for pointer/mouse users (modern browsers only) */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Extra specificity override for theme components that reset outline */
+header#site-header a:focus-visible,
+.navbar a:focus-visible,
+.nav-link:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 3px solid #ffffff !important;
+  outline-offset: 2px !important;
+  border-radius: 2px;
+}
+
+/* 3. Prose link underline (WCAG 1.4.1 – Use of Color)
+      Ensures links in content are distinguishable without relying on color alone. */
+.prose a:not([class*="btn"]):not(.no-underline) {
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
