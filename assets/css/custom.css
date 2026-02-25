@@ -131,16 +131,19 @@ a.no-underline[href^="/authors/"] {
 }
 
 /* 2. Focus Visible Indicator (WCAG 2.4.7 – Focus Visible)
-      Provides a clear 3px outline for all keyboard-focused elements. */
+      Provides a clear 3px outline for all keyboard-focused elements.
+
+      SAFARI NOTE: Safari's :focus-visible heuristic differs from Chrome.
+      On macOS Safari, buttons do not reliably trigger :focus-visible during
+      keyboard Tab, so suppressing focus outlines via :focus:not(:focus-visible)
+      hides focus for Safari keyboard users. We therefore only style
+      :focus-visible and leave the browser default ring as a safe fallback
+      for everything else — mouse users may occasionally see a brief native
+      outline, which is acceptable and spec-compliant behaviour. */
 :focus-visible {
   outline: 3px solid #005fcc !important;
   outline-offset: 2px !important;
   border-radius: 2px;
-}
-
-/* Remove outline for pointer/mouse users (modern browsers only) */
-:focus:not(:focus-visible) {
-  outline: none;
 }
 
 /* Extra specificity override for theme components that reset outline */
@@ -179,14 +182,17 @@ button:focus-visible,
   padding-right: 0.375rem !important;
 }
 
-/* Navbar text links and icon buttons */
+/* Navbar text links — keep display:block (theme default) but ensure
+   min-height for touch targets. Safari is strict about display changes
+   on flex children; inline-flex here breaks focus behaviour on macOS. */
 header#site-header .nav-link,
 .header .nav-link,
 .navbar .nav-link,
 .navbar a {
   min-height: 44px;
-  display: inline-flex !important;
-  align-items: center;
+  display: block;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 /* Icon-only buttons in the navbar (theme toggle, search toggle) */
