@@ -16,8 +16,10 @@ affiliations:
 links:
   - icon: "academicons/google-scholar"
     url: "https://scholar.google.com/citations?user=jcloyne&hl=en"
+    label: "Google Scholar"
   - icon: "academicons/ideas-repec"
     url: "https://ideas.repec.org/e/pcl85.html"
+    label: "IDEAS-RePEC"
   - icon: "academicons/cv"
     url: "uploads/CloyneCV_August2024.pdf"
     label: "CV"
