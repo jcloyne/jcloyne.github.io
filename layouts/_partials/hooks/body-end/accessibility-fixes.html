@@ -23,15 +23,9 @@
 
     /* ------------------------------------------------------------------
        2. Main Content Landmark (WCAG 1.3.6 / 4.1.2)
-          Hugo Blox renders the page body as a <div>; promote it to a
-          proper <main> landmark so AT users can navigate to it.
+          The <main> landmark, id="main-content", and tabindex="-1" are
+          now set directly in baseof.html; no JS override needed here.
     ------------------------------------------------------------------ */
-    var pageBody = document.querySelector('.page-body');
-    if (pageBody) {
-      pageBody.setAttribute('id', 'main-content');
-      pageBody.setAttribute('role', 'main');
-      pageBody.setAttribute('tabindex', '-1'); // allows skip link to programmatically focus it
-    }
 
     /* ------------------------------------------------------------------
        3. Navigation Landmark Label (WCAG 4.1.2)
@@ -62,6 +56,17 @@
     if (searchToggle) {
       searchToggle.setAttribute('aria-label', 'Open site search');
       searchToggle.setAttribute('aria-haspopup', 'dialog');
+    }
+
+    /* ------------------------------------------------------------------
+       5b. Search Input Accessible Label (WCAG 1.3.1 / 4.1.2 — Issue #5)
+           The search text input relies only on placeholder text; add
+           aria-label so it has a programmatically-determinable name.
+    ------------------------------------------------------------------ */
+    var searchInput = document.querySelector('[x-ref="searchInput"]');
+    if (searchInput && !searchInput.getAttribute('aria-label')) {
+      searchInput.setAttribute('aria-label', 'Search');
+      searchInput.setAttribute('role', 'searchbox');
     }
 
     /* ------------------------------------------------------------------
@@ -139,21 +144,12 @@
     });
 
     /* ------------------------------------------------------------------
-       10. Section Title Heading Semantics (WCAG 1.3.1 – Info and Relationships)
-           Hugo Blox collection block titles are rendered as styled <div>s,
-           not semantic heading elements. Add role="heading" aria-level="2"
-           so AT treats them as section headings at the correct level.
-           This matches the visual hierarchy (bio h1 → section h2).
+       10. Section Title Heading Semantics
+           Collection/markdown block titles are now rendered as <h2>
+           elements in the template overrides (collection/block.html and
+           markdown/block.html); JS role patching removed to avoid
+           redundant role="heading" on semantic <h2> elements (Issue #8).
     ------------------------------------------------------------------ */
-    document.querySelectorAll(
-      '.flex.flex-col.items-center.max-w-prose.mx-auto .mb-6.text-3xl.font-bold, ' +
-      '.flex.flex-col.items-center.max-w-prose.mx-auto .mb-6.text-2xl.font-bold'
-    ).forEach(function (el) {
-      if (!el.getAttribute('role')) {
-        el.setAttribute('role', 'heading');
-        el.setAttribute('aria-level', '2');
-      }
-    });
 
     /* ------------------------------------------------------------------
        11. Fix Duplicate Creative Commons Anchor in Footer (WCAG 4.1.1)
@@ -177,11 +173,41 @@
 
   } // end applyAccessibilityFixes
 
+  /* --------------------------------------------------------------------
+     12. New-Window / New-Tab Announcements (WCAG 3.2.2 — Issue #7)
+         For every target="_blank" link that does not already mention
+         "opens" in its aria-label or visible text, either:
+         (a) append "(opens in new tab)" to an existing aria-label, or
+         (b) inject a visually-hidden <span> so screen readers announce it.
+         Publication attachment links (PDF, Cite, DOI) are handled in the
+         Hugo template (page_links.html); this covers all remaining cases.
+  -------------------------------------------------------------------- */
+  function applyNewWindowWarnings() {
+    document.querySelectorAll('a[target="_blank"]').forEach(function (a) {
+      var label = (a.getAttribute('aria-label') || '').toLowerCase();
+      var text  = (a.textContent || '').toLowerCase();
+      if (label.indexOf('opens') === -1 && text.indexOf('opens') === -1) {
+        if (a.getAttribute('aria-label')) {
+          a.setAttribute('aria-label', a.getAttribute('aria-label') + ' (opens in new tab)');
+        } else {
+          var notice = document.createElement('span');
+          notice.className = 'sr-only';
+          notice.textContent = ' (opens in new tab)';
+          a.appendChild(notice);
+        }
+      }
+    });
+  }
+
   // Run as soon as DOM is ready (before full page load)
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', applyAccessibilityFixes);
+    document.addEventListener('DOMContentLoaded', function () {
+      applyAccessibilityFixes();
+      applyNewWindowWarnings();
+    });
   } else {
     applyAccessibilityFixes();
+    applyNewWindowWarnings();
   }
 
 })();

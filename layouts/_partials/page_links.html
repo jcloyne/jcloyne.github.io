@@ -60,7 +60,11 @@
     {{ end }}
 
     {{/* WCAG 2.1 AA: provide descriptive aria-label that includes publication title for context */}}
+    {{/* Also warn screen-reader users when the link opens in a new window (WCAG 3.2.2) */}}
     {{ $ariaLabel := printf "%s: %s" $label $page.Title }}
+    {{ if eq $target "target=\"_blank\"" }}
+      {{ $ariaLabel = printf "%s: %s (opens in new tab)" $label $page.Title }}
+    {{ end }}
 
     {{ if eq .type "bibtex" }}
       <button class="{{ $classes }} js-cite-clipboard cursor-pointer" type="button" data-filename="{{ $url }}" aria-label="{{ $ariaLabel }}">

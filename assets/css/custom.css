@@ -3,14 +3,6 @@
   padding-bottom: 2rem !important;
 }
 
-.pub-list-item .prose {
-  color: blue;
-}
-
-.dark .pub-list-item .prose {
-    color: lightblue; /* Or another light color for dark mode */
-}
-
 /* Block titles inside collection blocks (e.g., "Work in Progress") */
 .flex.flex-col.items-center.max-w-prose.mx-auto > .mb-6.text-3xl.font-bold,
 .flex.flex-col.items-center.max-w-prose.mx-auto > .mb-6.text-2xl.font-bold {
@@ -117,7 +109,6 @@ a.no-underline[href^="/authors/"] {
   width: 1px;
   height: 1px;
   overflow: hidden;
-  z-index: -999;
   text-decoration: none;
 }
 .skip-to-main:focus {
@@ -168,4 +159,71 @@ button:focus-visible,
 .prose a:not([class*="btn"]):not(.no-underline) {
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+/* 5. Touch Target Size (WCAG 2.5.5 – Target Size: Enhanced)
+      Interactive controls must have a minimum touch/click target of 44×44 CSS px.
+      ------------------------------------------------------------------ */
+
+/* Publication attachment buttons (PDF, Cite, DOI, etc.)
+   The vendor applies p-0 to these, leaving only text height (~12-14px).
+   Use inline-flex with vertical padding so the hit area reaches 44px while
+   the visual label stays compact. */
+.hb-attachment-link {
+  display: inline-flex !important;
+  align-items: center;
+  min-height: 44px;
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+  padding-left: 0.375rem !important;
+  padding-right: 0.375rem !important;
+}
+
+/* Navbar text links and icon buttons */
+header#site-header .nav-link,
+.header .nav-link,
+.navbar .nav-link,
+.navbar a {
+  min-height: 44px;
+  display: inline-flex !important;
+  align-items: center;
+}
+
+/* Icon-only buttons in the navbar (theme toggle, search toggle) */
+header#site-header button,
+.header button,
+.navbar button,
+button.theme-toggle {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 4. Windows High Contrast Mode (WCAG 1.4.11 — Issue #1)
+      Ensure interactive elements and the skip link remain visible and
+      use system colours in Forced Colors / Windows High Contrast mode. */
+@media (forced-colors: active) {
+  /* Let the browser substitute appropriate system colours for links,
+     buttons, and our custom-coloured components. */
+  a,
+  button,
+  [role="button"],
+  .hb-attachment-link {
+    forced-color-adjust: auto;
+  }
+
+  /* Skip link: render with system ButtonText/ButtonFace colours
+     so it is visible against any high-contrast background. */
+  .skip-to-main:focus {
+    background: ButtonFace;
+    color: ButtonText;
+    outline: 3px solid ButtonText;
+  }
+
+  /* Focus ring: fall back to system Highlight colour. */
+  :focus-visible {
+    outline-color: Highlight !important;
+  }
 }
