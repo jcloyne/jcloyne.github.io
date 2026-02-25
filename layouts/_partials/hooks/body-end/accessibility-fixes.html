@@ -117,12 +117,26 @@
     });
 
     /* ------------------------------------------------------------------
-       9. Non-functional Author Links – Remove from Keyboard Tab Order
-          (WCAG 2.1.1 – Keyboard)
-          CSS disables pointer-events on author links, making them visually
-          inert. Keyboard users would still reach them via Tab. Set
-          tabindex="-1" and aria-hidden so they are skipped entirely.
-          The visible author name text is preserved via a sibling span.
+       9a. Safari Keyboard Navigation (WCAG 2.1.1 – Keyboard)
+           macOS Safari does not include <a href> or <button> in the Tab
+           order by default (requires "Highlight each item" setting or
+           Full Keyboard Access). Setting tabindex="0" explicitly opts
+           every interactive element into the tab sequence in all browsers.
+    ------------------------------------------------------------------ */
+    document.querySelectorAll(
+      'a[href]:not([tabindex="-1"]), button:not([tabindex="-1"]), [role="button"]:not([tabindex="-1"])'
+    ).forEach(function (el) {
+      if (!el.getAttribute('tabindex')) {
+        el.setAttribute('tabindex', '0');
+      }
+    });
+
+    /* ------------------------------------------------------------------
+       9b. Non-functional Author Links – Remove from Keyboard Tab Order
+           (WCAG 2.1.1 – Keyboard)
+           CSS disables pointer-events on author links, making them visually
+           inert. Remove from tab order and hide from AT entirely.
+           Must run AFTER 9a so it overrides the tabindex="0" just set.
     ------------------------------------------------------------------ */
     var authorSelectors = [
       '.li-cite-author a[href^="/authors/"]',
