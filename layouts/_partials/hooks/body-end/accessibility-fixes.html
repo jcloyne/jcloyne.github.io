@@ -132,29 +132,6 @@
     });
 
     /* ------------------------------------------------------------------
-       9b. Non-functional Author Links – Remove from Keyboard Tab Order
-           (WCAG 2.1.1 – Keyboard)
-           CSS disables pointer-events on citation-list author links.
-           Remove from tab order and hide from AT.
-           Scoped tightly to list-view citation contexts only — NOT
-           the author cards at the bottom of publication detail pages
-           (those links are fully functional and must remain accessible).
-           Must run AFTER 9a so it overrides the tabindex="0" just set.
-    ------------------------------------------------------------------ */
-    var authorSelectors = [
-      '.li-cite-author a[href^="/authors/"]',
-      '.pub-list-item .li-cite-author a[href^="/authors/"]'
-    ];
-    document.querySelectorAll(authorSelectors.join(',')).forEach(function (a) {
-      // Remove from keyboard tab order only — do NOT set aria-hidden.
-      // These links have role="presentation" (via page_metadata_authors.html)
-      // which strips link semantics so AT reads the name as plain text.
-      // Adding aria-hidden would hide the text entirely from screen readers
-      // and Safari Read Aloud, breaking the mobile VoiceOver author fix.
-      a.setAttribute('tabindex', '-1');
-    });
-
-    /* ------------------------------------------------------------------
        10b. Section Landmark Accessible Names (WCAG 1.3.6, 4.1.2)
             A <section> element only becomes a named landmark region
             (role="region") when it has an accessible name via aria-label
