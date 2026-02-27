@@ -26,7 +26,7 @@ publication_types:
   - report
 
 # Publication name and optional abbreviated publication name.
-publication: "Federal Reserve Bank of San Francisco Working Paper 2025-15."
+publication: "Federal Reserve Bank of San Francisco Working Paper 2025-15"
 publication_short: ""
 
 abstract: "Using long-run cross-country panel data, we document that (i) contemporaneous credit growth strongly predicts contemporaneous equity returns with positive sign, and (ii) lagged credit growth strongly predicts contemporaneous equity returns with negative sign. This correlation reversal is robust to added controls for contemporaneous and lagged consumption growth and these credit factors have greater explanatory power than the consumption factors. We find that a general equilibrium model with financial frictions and rational expectations fails to match the empirically estimated sign on regression coefficients. Diagnostic expectations, instead, help recover the empirically estimated contemporaneous sign as well as the reversal observed in the data. The two features of diagnostic expectations – extrapolation and systematic reversal – are key to improving the asset pricing implications of the general equilibrium model."
