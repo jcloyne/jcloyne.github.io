@@ -1,12 +1,12 @@
 {{/* Display author list.
      Override of vendor partial.
-     Author links use role="presentation" so that screen readers / Safari
-     Read Aloud treat each name as plain text, not as an interactive link.
-     This pairs with the `pointer-events: none` CSS rule that disables mouse/
-     touch clicks on author filter links in list views.  Without role="presentation"
-     iOS VoiceOver (which relies on the touch-event system) cannot explore or
-     select elements that have pointer-events: none, causing author names to
-     appear completely absent to users of accessibility tools on mobile. */}}
+     Author names are rendered as plain <a> links without any ARIA role override.
+     WCAG / ARIA prohibit role="presentation" on focusable elements such as <a href>,
+     and Safari Read Aloud / VoiceOver skip elements with that role entirely, which
+     is why links were not being read in Safari.
+     Visual suppression of clicks in list views is handled solely via CSS
+     (pointer-events: none), which is sufficient for mouse/touch.
+     Screen-reader users can still follow the author-page links via keyboard. */}}
 
 {{- $authors := .Params.authors -}}
 
@@ -25,11 +25,7 @@
     {{- if gt $index 0 }}, {{ end -}}
     <span {{ if $highlight_name }}class="font-bold"{{end}}>
       {{- if $termPage -}}
-        {{/* role="presentation" strips link semantics so assistive technologies
-             read this as plain text.  Pointer-events: none (set via CSS) already
-             prevents mouse/touch navigation; role="presentation" extends that to
-             screen readers and Safari Read Aloud on iOS / macOS. */}}
-        <a href="{{ $termPage.RelPermalink }}" role="presentation">{{ $display }}</a>
+        <a href="{{ $termPage.RelPermalink }}">{{ $display }}</a>
       {{- else -}}
         {{ $display }}
       {{- end -}}
