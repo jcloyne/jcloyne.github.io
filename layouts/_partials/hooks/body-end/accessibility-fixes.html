@@ -146,8 +146,12 @@
       '.pub-list-item .li-cite-author a[href^="/authors/"]'
     ];
     document.querySelectorAll(authorSelectors.join(',')).forEach(function (a) {
+      // Remove from keyboard tab order only — do NOT set aria-hidden.
+      // These links have role="presentation" (via page_metadata_authors.html)
+      // which strips link semantics so AT reads the name as plain text.
+      // Adding aria-hidden would hide the text entirely from screen readers
+      // and Safari Read Aloud, breaking the mobile VoiceOver author fix.
       a.setAttribute('tabindex', '-1');
-      a.setAttribute('aria-hidden', 'true');
     });
 
     /* ------------------------------------------------------------------

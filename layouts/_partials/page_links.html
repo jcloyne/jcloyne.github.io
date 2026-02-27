@@ -67,10 +67,16 @@
     {{ end }}
 
     {{ if eq .type "bibtex" }}
-      <button class="{{ $classes }} js-cite-clipboard cursor-pointer" type="button" data-filename="{{ $url }}" aria-label="{{ $ariaLabel }}">
+      {{/* Use <a> instead of <button> so Safari Read Aloud treats it as a
+           readable link (buttons are interactive controls and are skipped by
+           Read Aloud). The js-cite-clipboard class / data-filename attribute
+           remain so HugoBlox JS still intercepts the click to open the modal.
+           The href serves as a progressive-enhancement fallback (downloads
+           the .bib file if JS is unavailable). */}}
+      <a class="{{ $classes }} js-cite-clipboard" href="{{ $url | safeURL }}" data-filename="{{ $url }}" aria-label="{{ $ariaLabel }}">
         {{ partial "functions/get_icon" (dict "name" (.icon | default "hero/document-duplicate") "attributes" "style=\"height: 1em\" class='inline-block' aria-hidden='true'") }}
         <span>{{ $label }}</span>
-      </button>
+      </a>
     {{ else }}
       <a class="{{ $classes }}" href="{{ $url | safeURL }}" {{ $target | safeHTMLAttr }} {{ with $rel }}rel="{{ delimit . " " }}"{{ end }} aria-label="{{ $ariaLabel }}">
         {{ partial "functions/get_icon" (dict "name" (.icon | default "hero/link") "attributes" "style=\"height: 1em\" class='inline-block' aria-hidden='true'") }}
