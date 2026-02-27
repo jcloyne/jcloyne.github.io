@@ -247,59 +247,63 @@
       {{ end }}
       {{end}}
 
-      {{/* EVENT / PUBLICATION METADATA */}}
+      {{/* EVENT / PUBLICATION METADATA
+           Use <dl>/<dt>/<dd> for key-value metadata pairs (WCAG 1.3.1).
+           These are labelled data fields, not document section headings, so
+           <h2> would create false heading-structure for AT users.  The grid
+           CSS classes work equally well on <dl>, <dt>, and <dd>. */}}
       {{ if .Params.abstract | or (eq .Type "publications") | or (eq .Type "events") }}
-        <div class="max-w-prose grid grid-cols-1 md:grid-cols-[200px_auto] gap-4 my-6">
+        <dl class="max-w-prose grid grid-cols-1 md:grid-cols-[200px_auto] gap-4 my-6">
 
         {{ if .Params.abstract }}
-          <h2 class="font-bold text-2xl">{{ i18n "abstract" }}</h2>
-          <div>{{ .Params.abstract | markdownify }}</div>
+          <dt class="font-bold text-2xl">{{ i18n "abstract" }}</dt>
+          <dd>{{ .Params.abstract | markdownify }}</dd>
         {{ end }}
 
         {{/* If the type is Uncategorized, hide the type. */}}
         {{ if $pub_type_display }}
-          <h2 class="font-bold text-2xl">{{ i18n "publication_type" }}</h2>
-          <div>
+          <dt class="font-bold text-2xl">{{ i18n "publication_type" }}</dt>
+          <dd>
             {{ if and .Params.publication_types (gt (len .Params.publication_types) 0) }}
             <a href="{{ range first 1 (.GetTerms "publication_types") }}{{.RelPermalink}}{{end}}">
             {{ $pub_type_display }}
             </a>
             {{ end }}
-          </div>
+          </dd>
         {{ end }}
 
         {{ if .Params.publication }}
-          <h2 class="font-bold text-2xl">{{ i18n "publication" }}</h2>
-          <div>{{ .Params.publication | markdownify }}</div>
+          <dt class="font-bold text-2xl">{{ i18n "publication" }}</dt>
+          <dd>{{ .Params.publication | markdownify }}</dd>
         {{ end }}
 
         {{ if eq .Type "events" }}
-          <h2 class="font-bold text-2xl">{{ i18n "date" }}</h2>
-          <div>
+          <dt class="font-bold text-2xl">{{ i18n "date" }}</dt>
+          <dd>
             {{ partial "functions/get_event_dates" . }}
-          </div>
+          </dd>
         {{ end }}
 
         {{ if .Params.event_name }}
-          <h2 class="font-bold text-2xl">{{ i18n "event" }}</h2>
-          <div>
+          <dt class="font-bold text-2xl">{{ i18n "event" }}</dt>
+          <dd>
             {{ with .Params.event_url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}
             {{ .Params.event_name | markdownify }}
             {{ if .Params.event_url }}</a>{{ end }}
-          </div>
+          </dd>
         {{ end }}
 
         {{ if .Params.location }}
-          <h2 class="font-bold text-2xl">{{ i18n "location" }}</h2>
-          <div>
+          <dt class="font-bold text-2xl">{{ i18n "location" }}</dt>
+          <dd>
             <p>{{ .Params.location | markdownify }}</p>
             {{ if .Params.address }}
               <p>{{partial "functions/get_address" (dict "root" . "address" .Params.address) }}</p>
             {{end}}
-          </div>
+          </dd>
         {{ end }}
 
-      </div>
+      </dl>
       {{ end }}
 
       <div class="prose prose-slate lg:prose-xl dark:prose-invert" data-pagefind-body>
