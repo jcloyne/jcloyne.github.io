@@ -27,7 +27,6 @@ cascade:
       kind: page
     outputs: [HTML, present]
 
-
 ############################
 ## ADVANCED
 ############################

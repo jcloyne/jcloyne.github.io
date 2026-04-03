@@ -2,3 +2,54 @@
 <link rel="icon" type="image/svg+xml" href="/assets/media/icon.svg">
 <!-- Optional PNG fallback -->
 <!-- <link rel="icon" type="image/png" href="/assets/media/icon.png"> -->
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		if (!document.getElementById("skip-to-main")) {
+			const skipLink = document.createElement("a");
+			skipLink.id = "skip-to-main";
+			skipLink.href = "#main-content";
+			skipLink.className = "skip-link";
+			skipLink.textContent = "Skip to main content";
+			document.body.insertBefore(skipLink, document.body.firstChild);
+		}
+
+		const mainContent = document.querySelector("main, .page-body");
+		if (mainContent) {
+			mainContent.id = "main-content";
+			if (mainContent.tagName.toLowerCase() !== "main") {
+				mainContent.setAttribute("role", "main");
+			}
+			if (!mainContent.hasAttribute("tabindex")) {
+				mainContent.setAttribute("tabindex", "-1");
+			}
+		}
+
+		const navToggle = document.getElementById("nav-toggle");
+		const navMenu = document.getElementById("nav-menu");
+		const navLabel = navToggle
+			? document.querySelector('label[for="nav-toggle"]')
+			: null;
+
+		if (navToggle && navMenu && navLabel) {
+			navLabel.setAttribute("role", "button");
+			navLabel.setAttribute("tabindex", "0");
+			navLabel.setAttribute("aria-controls", "nav-menu");
+
+			const syncExpanded = function () {
+				navLabel.setAttribute("aria-expanded", navToggle.checked ? "true" : "false");
+			};
+
+			syncExpanded();
+			navToggle.addEventListener("change", syncExpanded);
+
+			navLabel.addEventListener("keydown", function (event) {
+				if (event.key === "Enter" || event.key === " ") {
+					event.preventDefault();
+					navToggle.checked = !navToggle.checked;
+					navToggle.dispatchEvent(new Event("change", { bubbles: true }));
+				}
+			});
+		}
+	});
+</script>

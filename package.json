@@ -15,5 +15,11 @@
     "pagefind": "^1.4.0",
     "preact": "^10.27.2",
     "tailwindcss": "^4.1.12"
+  },
+  "devDependencies": {
+    "hugo-bin": "^0.149.2"
+  },
+  "hugo-bin": {
+    "buildTags": "extended"
   }
 }
