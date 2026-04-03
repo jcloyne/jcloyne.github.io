@@ -20,10 +20,6 @@ abstract: |
   Fiscal Studies: Volume 39, Issue 4
   Special Issue on Brexit: New Evidence and Policy Perspectives
 
-abstract: |
-  Fiscal Studies: Volume 39, Issue 4
-  Special Issue on Brexit: New Evidence and Policy Perspectives
-
   Pages: 543-706
   December 2018
 
