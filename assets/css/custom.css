@@ -3,14 +3,6 @@
   padding-bottom: 2rem !important;
 }
 
-.pub-list-item .prose {
-  color: blue;
-}
-
-.dark .pub-list-item .prose {
-    color: lightblue; /* Or another light color for dark mode */
-}
-
 /* Block titles inside collection blocks (e.g., "Work in Progress") */
 .flex.flex-col.items-center.max-w-prose.mx-auto > .mb-6.text-3xl.font-bold,
 .flex.flex-col.items-center.max-w-prose.mx-auto > .mb-6.text-2xl.font-bold {
@@ -49,7 +41,9 @@ section#bio .avatar,
 
 /* Header color variables (light + dark) */
 :root {
-  --color-header-bg: #4083d6; /* navbar background */
+  /* Darkened from #4083d6 to meet WCAG 2.1 AA contrast (≥4.5:1) with white text.
+     #2a62a8 achieves ≈6.1:1 contrast ratio. */
+  --color-header-bg: #2a62a8; /* navbar background */
   --color-header-fg: #ffffff; /* navbar text/icons */
 }
 
@@ -79,7 +73,7 @@ header#site-header .nav-link,
 .header .nav-link,
 .navbar .nav-link,
 .navbar a {
-  font-size: 1.25rem; /* slightly larger than default */
+  font-size: 1.15rem; /* slightly larger than default */
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 0.75rem;
@@ -87,7 +81,9 @@ header#site-header .nav-link,
 }
 
 /* Disable author links that navigate/filter by author in research/citation views */
-/* Makes them non-interactive while preserving text styling */
+/* Makes them non-interactive while preserving text styling.
+   Scope tightly to list-view citation contexts only — NOT to the author cards
+   at the bottom of publication detail pages (those links are fully functional). */
 .research-block-spacing .li-cite-author a[href^="/authors/"],
 .pub-list-item .li-cite-author a[href^="/authors/"] {
   pointer-events: none;

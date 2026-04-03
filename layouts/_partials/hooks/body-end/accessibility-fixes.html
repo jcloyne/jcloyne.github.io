@@ -1,0 +1,202 @@
+{{/* WCAG 2.1 AA Accessibility Fixes
+     Injected at the end of <body> to patch ARIA attributes and landmarks
+     that cannot be set directly through Hugo Blox theme templates.
+*/}}
+<script>
+(function () {
+  'use strict';
+
+  function applyAccessibilityFixes() {
+
+    /* ------------------------------------------------------------------
+       1. Skip Navigation Link (WCAG 2.4.1 – Bypass Blocks)
+          Prepend a visually-hidden link that becomes visible on focus,
+          letting keyboard users jump past the repeated navigation.
+    ------------------------------------------------------------------ */
+    if (!document.querySelector('.skip-to-main')) {
+      var skipLink = document.createElement('a');
+      skipLink.href = '#main-content';
+      skipLink.className = 'skip-to-main';
+      skipLink.textContent = 'Skip to main content';
+      document.body.insertBefore(skipLink, document.body.firstChild);
+    }
+
+    /* ------------------------------------------------------------------
+       2. Main Content Landmark (WCAG 1.3.6 / 4.1.2)
+          The <main> landmark, id="main-content", and tabindex="-1" are
+          now set directly in baseof.html; no JS override needed here.
+    ------------------------------------------------------------------ */
+
+    /* ------------------------------------------------------------------
+       3. Navigation Landmark Label (WCAG 4.1.2)
+          A page with a single <nav> still benefits from an aria-label
+          so AT announces "Main navigation" rather than just "navigation".
+    ------------------------------------------------------------------ */
+    var siteNav = document.querySelector('nav.navbar');
+    if (siteNav && !siteNav.getAttribute('aria-label')) {
+      siteNav.setAttribute('aria-label', 'Main navigation');
+    }
+
+    /* ------------------------------------------------------------------
+       4. Theme Toggle Button Label (WCAG 4.1.2)
+          aria-label and title are now set directly in navbar.html;
+          no JS override needed.
+    ------------------------------------------------------------------ */
+
+    /* ------------------------------------------------------------------
+       5. Search Toggle Button Label (WCAG 4.1.2)
+          aria-label and aria-haspopup are now set directly in navbar.html;
+          no JS override needed.
+    ------------------------------------------------------------------ */
+
+    /* ------------------------------------------------------------------
+       5b. Search Input Accessible Label (WCAG 1.3.1 / 4.1.2 — Issue #5)
+           The search text input relies only on placeholder text; add
+           aria-label so it has a programmatically-determinable name.
+    ------------------------------------------------------------------ */
+    var searchInput = document.querySelector('[x-ref="searchInput"]');
+    if (searchInput && !searchInput.getAttribute('aria-label')) {
+      searchInput.setAttribute('aria-label', 'Search');
+      searchInput.setAttribute('role', 'searchbox');
+    }
+
+    /* ------------------------------------------------------------------
+       6. Search Close Button Label (WCAG 4.1.2)
+          The ✕ close button inside the search modal has no aria-label.
+    ------------------------------------------------------------------ */
+    var searchModal = document.querySelector('.fixed.inset-0');
+    if (searchModal) {
+      searchModal.querySelectorAll('button').forEach(function (btn) {
+        // The close button contains an × SVG and no text; detect by child path
+        var svgPath = btn.querySelector('path[d*="M6 18L18 6"]');
+        if (svgPath && !btn.getAttribute('aria-label')) {
+          btn.setAttribute('aria-label', 'Close search');
+        }
+      });
+      // Add role="dialog" so AT announces the modal correctly
+      var searchPanel = searchModal.querySelector('.mx-4.overflow-hidden');
+      if (searchPanel && !searchPanel.getAttribute('role')) {
+        searchPanel.setAttribute('role', 'dialog');
+        searchPanel.setAttribute('aria-label', 'Site search');
+        searchPanel.setAttribute('aria-modal', 'true');
+      }
+    }
+
+    /* ------------------------------------------------------------------
+       7. Social / Biography Link Labels (WCAG 4.1.2)
+          Hugo Blox generates aria-label from the internal icon name
+          (e.g. "academicons/google-scholar"). Replace with human-readable
+          descriptions.
+    ------------------------------------------------------------------ */
+    var iconLabelMap = {
+      'academicons/google-scholar': 'Google Scholar profile (opens in new tab)',
+      'academicons/ideas-repec':    'IDEAS/RePEC profile (opens in new tab)',
+      'academicons/cv':             'Download CV PDF (opens in new tab)',
+      'hero/envelope':              'Send email'
+    };
+    document.querySelectorAll('[aria-label]').forEach(function (el) {
+      var current = el.getAttribute('aria-label');
+      if (iconLabelMap[current]) {
+        el.setAttribute('aria-label', iconLabelMap[current]);
+      }
+    });
+
+    /* ------------------------------------------------------------------
+       8. Decorative SVG aria-hidden (WCAG 4.1.2)
+          SVGs that are purely decorative (inside a labelled button or
+          link) should be hidden from AT to avoid redundant announcements.
+    ------------------------------------------------------------------ */
+    document.querySelectorAll('button[aria-label] svg, a[aria-label] svg').forEach(function (svg) {
+      svg.setAttribute('aria-hidden', 'true');
+      svg.setAttribute('focusable', 'false');
+    });
+    // Also hide the decorative icon-circles next to section headings
+    document.querySelectorAll('.flex-shrink-0.w-12.h-12 svg').forEach(function (svg) {
+      svg.setAttribute('aria-hidden', 'true');
+      svg.setAttribute('focusable', 'false');
+    });
+
+    /* ------------------------------------------------------------------
+       9a. Safari Keyboard Navigation (WCAG 2.1.1 – Keyboard)
+           macOS Safari does not include <a href> or <button> in the Tab
+           order by default (requires "Highlight each item" setting or
+           Full Keyboard Access). Setting tabindex="0" explicitly opts
+           every interactive element into the tab sequence in all browsers.
+    ------------------------------------------------------------------ */
+    document.querySelectorAll(
+      'a[href]:not([tabindex="-1"]), button:not([tabindex="-1"]), [role="button"]:not([tabindex="-1"])'
+    ).forEach(function (el) {
+      if (!el.getAttribute('tabindex')) {
+        el.setAttribute('tabindex', '0');
+      }
+    });
+
+    /* ------------------------------------------------------------------
+       10b. Section Landmark Accessible Names (WCAG 1.3.6, 4.1.2)
+            A <section> element only becomes a named landmark region
+            (role="region") when it has an accessible name via aria-label
+            or aria-labelledby. Find the primary heading inside each
+            <section id="..."> and point aria-labelledby at it.
+    ------------------------------------------------------------------ */
+    document.querySelectorAll('section[id]').forEach(function (section) {
+      if (section.getAttribute('aria-labelledby') || section.getAttribute('aria-label')) return;
+      var heading = section.querySelector('h1, h2, h3');
+      if (!heading) return;
+      var hId = heading.id || ('section-heading-' + section.id);
+      if (!heading.id) { heading.id = hId; }
+      section.setAttribute('aria-labelledby', hId);
+    });
+
+    /* ------------------------------------------------------------------
+       10. Section Title Heading Semantics
+           Collection/markdown block titles are rendered as <h2> elements;
+           section aria-labelledby is now set in step 10b above.
+    ------------------------------------------------------------------ */
+
+    /* ------------------------------------------------------------------
+       11. Duplicate Creative Commons Anchor
+           Previously patched via JS; now fixed in site_footer_license.html
+           template override (duplicate opening <a> tag removed at source).
+    ------------------------------------------------------------------ */
+
+  } // end applyAccessibilityFixes
+
+  /* --------------------------------------------------------------------
+     12. New-Window / New-Tab Announcements (WCAG 3.2.2 — Issue #7)
+         For every target="_blank" link that does not already mention
+         "opens" in its aria-label or visible text, either:
+         (a) append "(opens in new tab)" to an existing aria-label, or
+         (b) inject a visually-hidden <span> so screen readers announce it.
+         Publication attachment links (PDF, Cite, DOI) are handled in the
+         Hugo template (page_links.html); this covers all remaining cases.
+  -------------------------------------------------------------------- */
+  function applyNewWindowWarnings() {
+    document.querySelectorAll('a[target="_blank"]').forEach(function (a) {
+      var label = (a.getAttribute('aria-label') || '').toLowerCase();
+      var text  = (a.textContent || '').toLowerCase();
+      if (label.indexOf('opens') === -1 && text.indexOf('opens') === -1) {
+        if (a.getAttribute('aria-label')) {
+          a.setAttribute('aria-label', a.getAttribute('aria-label') + ' (opens in new tab)');
+        } else {
+          var notice = document.createElement('span');
+          notice.className = 'sr-only';
+          notice.textContent = ' (opens in new tab)';
+          a.appendChild(notice);
+        }
+      }
+    });
+  }
+
+  // Run as soon as DOM is ready (before full page load)
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () {
+      applyAccessibilityFixes();
+      applyNewWindowWarnings();
+    });
+  } else {
+    applyAccessibilityFixes();
+    applyNewWindowWarnings();
+  }
+
+})();
+</script>
