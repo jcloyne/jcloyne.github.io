@@ -84,14 +84,16 @@ sections:
     Bi: "section-76c02605"
   - block: "collection"
     content:
-      title: "Book Chapters and Edited Volumes"
+      title: "Other"
       count: 0
       sort_by: "Date"
       sort_ascending: false
       filters:
         folders:
           - "publication"
-        tag: "other-publication"
+        tags:
+          - "other-publication"
+          - "unpublished"
     design:
       view: "citation"
       columns: 1
@@ -100,24 +102,6 @@ sections:
     ue: "section-other-publications"
     id: "other-publications"
     Bi: "section-040f8a4c"
-  - block: "collection"
-    content:
-      title: "Other Manuscripts"
-      count: 0
-      sort_by: "Date"
-      sort_ascending: false
-      filters:
-        folders:
-          - "publication"
-        tag: "unpublished"
-    design:
-      view: "citation"
-      columns: 1
-      css_style: "font-size: 1.2rem;"
-      css_class: "research-block-spacing"
-    ue: "section-unpublished"
-    id: "unpublished"
-    Bi: "section-da9bac80"
   - block: "markdown"
     content:
       title: "Contact Details"

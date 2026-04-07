@@ -305,16 +305,21 @@
           {{ if $linkUrl }}
             {{ $scheme := (urls.Parse $linkUrl).Scheme }}
             {{ $target := "" }}
+            {{ $aria := $linkLabel | default $iconName }}
             {{ if not $scheme }}
               {{ if not (hasPrefix $linkUrl "#") }}
                 {{ $linkUrl = $linkUrl | relLangURL }}
               {{ end }}
-              {{ if eq (path.Ext $linkUrl) ".pdf" }}{{ $target = "target=\"_blank\" rel=\"noopener\"" }}{{ end }}
+              {{ if eq (path.Ext $linkUrl) ".pdf" }}
+                {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+                {{ $aria = printf "%s (opens in new tab)" $aria }}
+              {{ end }}
             {{ else if in (slice "http" "https") $scheme }}
               {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+              {{ $aria = printf "%s (opens in new tab)" $aria }}
             {{ end }}
             <a href="{{ $linkUrl | safeURL }}" {{ $target | safeHTMLAttr }} 
-               aria-label="{{ $iconName }}"
+               aria-label="{{ $aria }}"
                {{ if $linkLabel }} title="{{ $linkLabel }}"{{ end }}
                class="w-12 h-12 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 
                       shadow-md hover:shadow-xl hover:scale-110 hover:-translate-y-1 

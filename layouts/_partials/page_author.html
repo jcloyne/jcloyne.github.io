@@ -77,7 +77,7 @@
               {{ end }}
               {{ with $profile.links }}
                 <div class="text-2xl sm:text-lg pt-1">
-                  {{ partial "social_links" (dict "Params" (dict "profiles" $profile.links)) }}
+                  {{ partial "_partials/social_links_accessible" (dict "Params" (dict "profiles" $profile.links)) }}
                 </div>
               {{ end }}
             </div>

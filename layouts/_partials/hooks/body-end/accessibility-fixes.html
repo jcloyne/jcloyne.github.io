@@ -8,18 +8,11 @@
 
   function applyAccessibilityFixes() {
 
-    /* ------------------------------------------------------------------
+     /* ------------------------------------------------------------------
        1. Skip Navigation Link (WCAG 2.4.1 – Bypass Blocks)
-          Prepend a visually-hidden link that becomes visible on focus,
-          letting keyboard users jump past the repeated navigation.
-    ------------------------------------------------------------------ */
-    if (!document.querySelector('.skip-to-main')) {
-      var skipLink = document.createElement('a');
-      skipLink.href = '#main-content';
-      skipLink.className = 'skip-to-main';
-      skipLink.textContent = 'Skip to main content';
-      document.body.insertBefore(skipLink, document.body.firstChild);
-    }
+         The skip link is rendered directly in baseof.html so it is
+         available in the initial HTML without relying on JavaScript.
+     ------------------------------------------------------------------ */
 
     /* ------------------------------------------------------------------
        2. Main Content Landmark (WCAG 1.3.6 / 4.1.2)

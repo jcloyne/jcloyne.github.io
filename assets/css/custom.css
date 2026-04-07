@@ -97,7 +97,8 @@ header#site-header .nav-link,
   display: none !important;
 }
 
-.skip-link {
+.skip-link,
+.skip-to-main {
   position: absolute;
   left: 0.75rem;
   top: -3rem;
@@ -112,7 +113,9 @@ header#site-header .nav-link,
 }
 
 .skip-link:focus,
-.skip-link:focus-visible {
+.skip-link:focus-visible,
+.skip-to-main:focus,
+.skip-to-main:focus-visible {
   top: 0.75rem;
 }
 

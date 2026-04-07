@@ -1,7 +1,7 @@
 {{ $branding := partialCached "functions/get_branding" . "branding" }}
 {{ $logo := partialCached "functions/get_logo" (dict "constraint" "max_height" "size" 36) "navbar_logo" }}
 <header id="site-header" class="header">
-  <nav class="navbar px-3 flex justify-start">
+  <nav class="navbar px-3 flex justify-start" aria-label="Main navigation">
     <div class="order-0 h-full">
       <!-- Brand -->
       <a class="navbar-brand" href="{{ site.Home.RelPermalink }}" title="{{ $branding.site_title }}">
@@ -17,7 +17,7 @@
               width="{{ .Width }}"
               height="{{ .Height }}"
               src="{{ .RelPermalink }}"
-              alt="{{ $branding.name }}" />
+              alt="" />
           {{ end }}
         {{ end }}
         {{/* Display brand name */}}
@@ -25,12 +25,13 @@
       </a>
     </div>
     <!-- Mobile menu -->
-    <input id="nav-toggle" type="checkbox" class="hidden" aria-hidden="true" />
+    <input id="nav-toggle" type="checkbox" class="hidden" aria-hidden="true" onchange="this.nextElementSibling.setAttribute('aria-expanded', this.checked ? 'true' : 'false')" />
     <label
       for="nav-toggle"
       tabindex="0"
       role="button"
       aria-controls="nav-menu"
+      aria-expanded="false"
       aria-label="Toggle navigation menu"
       onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.previousElementSibling.click();}"
       class="order-3 cursor-pointer flex items-center lg:hidden text-[var(--color-header-fg)] lg:order-1">

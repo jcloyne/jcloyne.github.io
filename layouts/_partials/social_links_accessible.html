@@ -1,0 +1,24 @@
+{{ if .Params.profiles }}
+<div class="flex flex-wrap text-neutral-500 dark:text-neutral-300">
+  {{ range $profile := .Params.profiles }}
+    {{ $link := $profile.url }}
+    {{ $scheme := (urls.Parse $link).Scheme }}
+    {{ $target := "" }}
+    {{ $label := $profile.label | default ($profile.icon | title) }}
+    {{ if not $scheme }}
+      {{ $link = $profile.url | relLangURL }}
+    {{ else if in (slice "http" "https") $scheme }}
+      {{ $target = "target=\"_blank\" rel=\"me noopener noreferrer\"" }}
+      {{ $label = printf "%s (opens in new tab)" $label }}
+    {{ end }}
+    <a
+      class="pr-2 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
+      style="will-change:transform;"
+      href="{{ $link | safeURL }}"
+      {{ $target | safeHTMLAttr }}
+      aria-label="{{ $label }}"
+      {{ with $profile.label }}title="{{ . }}"{{ end }}
+    >{{ partial "functions/get_icon" (dict "name" $profile.icon "attributes" "style=\"height: 1em;\"") }}</a>
+  {{ end }}
+</div>
+{{ end }}

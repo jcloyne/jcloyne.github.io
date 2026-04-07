@@ -100,9 +100,11 @@
 {{ end }}
 {{ if gt (len $tags) 0 }}
   {{ $selected := slice }}
+  {{ $taxonomy_found := false }}
   {{ range $tags }}
     {{ $tag_page := site.GetPage (printf "tags/%s" (urlize .)) }}
     {{ if $tag_page }}
+      {{ $taxonomy_found = true }}
       {{ $selected = $selected | union $tag_page.Pages }}
     {{ end }}
   {{ end }}
@@ -110,6 +112,14 @@
     {{ $query = $query | intersect $selected }}
     {{ $first_tag := index $tags 0 }}
     {{ $archive_page = site.GetPage (printf "tags/%s" (urlize $first_tag)) }}
+  {{ else if not $taxonomy_found }}
+    {{ $filtered := slice }}
+    {{ range $query }}
+      {{ if intersect .Params.tags $tags }}
+        {{ $filtered = $filtered | append . }}
+      {{ end }}
+    {{ end }}
+    {{ $query = $filtered }}
   {{ end }}
 {{ end }}
 
@@ -122,6 +132,14 @@
   {{ with site.GetPage (printf "tags/%s" (urlize $tag)) }}
     {{ $archive_page = . }}
     {{ $query = $query | intersect .Pages }}
+  {{ else }}
+    {{ $filtered := slice }}
+    {{ range $query }}
+      {{ if in .Params.tags $tag }}
+        {{ $filtered = $filtered | append . }}
+      {{ end }}
+    {{ end }}
+    {{ $query = $filtered }}
   {{ end }}
 {{ end }}
 
@@ -146,6 +164,14 @@
   {{ with site.GetPage (printf "publication_types/%s" $publication_type) }}
     {{ $archive_page = . }}
     {{ $query = $query | intersect .Pages }}
+  {{ else }}
+    {{ $filtered := slice }}
+    {{ range $query }}
+      {{ if in .Params.publication_types $publication_type }}
+        {{ $filtered = $filtered | append . }}
+      {{ end }}
+    {{ end }}
+    {{ $query = $filtered }}
   {{ end }}
 {{ end }}
 
@@ -157,6 +183,14 @@
 {{ if $exclude_publication_type }}
   {{ with site.GetPage (printf "publication_types/%s" $exclude_publication_type) }}
     {{ $query = $query | complement .Pages }}
+  {{ else }}
+    {{ $filtered := slice }}
+    {{ range $query }}
+      {{ if not (in .Params.publication_types $exclude_publication_type) }}
+        {{ $filtered = $filtered | append . }}
+      {{ end }}
+    {{ end }}
+    {{ $query = $filtered }}
   {{ end }}
 {{ end }}
 
