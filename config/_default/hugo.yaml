@@ -26,6 +26,12 @@ cascade:
       path: /slides/**
       kind: page
     outputs: [HTML, present]
+  - _target:
+      path: /publication/**
+      kind: page
+    build:
+      list: always
+      render: never
 
 ############################
 ## ADVANCED

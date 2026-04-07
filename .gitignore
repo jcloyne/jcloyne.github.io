@@ -9,6 +9,9 @@
 # Generated site output
 public/
 
+# Local archives of generated artifacts
+.archive/
+
 # Hugo resources (processed assets)
 resources/
 
