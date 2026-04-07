@@ -35,6 +35,7 @@
     {{ $url := .url | default "" }}
     {{ $scheme := (urls.Parse $url).Scheme }}
     {{ $target := "" }}
+    {{ $opensNewTab := false }}
     {{ $rel := slice }}
     {{ with .rel }}{{ $rel = . }}{{ end }}
     {{ if not $scheme }}
@@ -43,9 +44,15 @@
       {{ else }}
         {{ $url = $url | relURL }}
       {{ end }}
+      {{ if eq (lower (path.Ext $url)) ".pdf" }}
+        {{ $target = "target=\"_blank\"" }}
+        {{ $rel = $rel | append "noopener" }}
+        {{ $opensNewTab = true }}
+      {{ end }}
     {{ else if in (slice "http" "https") $scheme }}
       {{ $target = "target=\"_blank\"" }}
       {{ $rel = $rel | append "noopener" }}
+      {{ $opensNewTab = true }}
     {{ end }}
 
     {{ $classes := printf "hb-attachment-link %s" (cond $is_list "hb-attachment-link-small" "hb-attachment-link-large") }}
@@ -62,7 +69,7 @@
     {{/* WCAG 2.1 AA: provide descriptive aria-label that includes publication title for context */}}
     {{/* Also warn screen-reader users when the link opens in a new window (WCAG 3.2.2) */}}
     {{ $ariaLabel := printf "%s: %s" $label $page.Title }}
-    {{ if eq $target "target=\"_blank\"" }}
+    {{ if $opensNewTab }}
       {{ $ariaLabel = printf "%s: %s (opens in new tab)" $label $page.Title }}
     {{ end }}
 
@@ -73,14 +80,15 @@
            remain so HugoBlox JS still intercepts the click to open the modal.
            The href serves as a progressive-enhancement fallback (downloads
            the .bib file if JS is unavailable). */}}
-      <a class="{{ $classes }} js-cite-clipboard" href="{{ $url | safeURL }}" data-filename="{{ $url }}" aria-label="{{ $ariaLabel }}">
+      <a class="{{ $classes }} js-cite-clipboard" href="{{ $url | safeURL }}" data-filename="{{ $url }}" aria-label="{{ $ariaLabel }}" title="{{ $ariaLabel }}">
         {{ partial "functions/get_icon" (dict "name" (.icon | default "hero/document-duplicate") "attributes" "style=\"height: 1em\" class='inline-block' aria-hidden='true'") }}
         <span>{{ $label }}</span>
       </a>
     {{ else }}
-      <a class="{{ $classes }}" href="{{ $url | safeURL }}" {{ $target | safeHTMLAttr }} {{ with $rel }}rel="{{ delimit . " " }}"{{ end }} aria-label="{{ $ariaLabel }}">
+      <a class="{{ $classes }}" href="{{ $url | safeURL }}" {{ $target | safeHTMLAttr }} {{ with $rel }}rel="{{ delimit . " " }}"{{ end }} aria-label="{{ $ariaLabel }}" title="{{ $ariaLabel }}">
         {{ partial "functions/get_icon" (dict "name" (.icon | default "hero/link") "attributes" "style=\"height: 1em\" class='inline-block' aria-hidden='true'") }}
         <span>{{ $label }}</span>
+        {{ if $opensNewTab }}<span class="sr-only"> (opens in new tab)</span>{{ end }}
       </a>
     {{ end }}
   {{ end }}

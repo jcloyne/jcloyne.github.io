@@ -128,3 +128,15 @@ textarea:focus-visible,
   outline: 3px solid #facc15;
   outline-offset: 2px;
 }
+
+.hb-attachment-link:focus-visible {
+  outline: 3px solid #facc15;
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+  background: #fffbeb;
+  text-decoration: underline;
+}
+
+.dark .hb-attachment-link:focus-visible {
+  background: rgba(250, 204, 21, 0.18);
+}
