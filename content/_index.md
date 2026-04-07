@@ -20,13 +20,11 @@ sections:
 
         <div>
           <h3 class="text-l font-bold mb-3">Affiliations</h3>
-          <ul class="list-disc ml-6 space-y-0.25 text-m">
-            <li>Research Associate,
-                <em>National Bureau of Economic Research</em>
-            </li>
-            <li>Research Fellow,
-                <em>Centre for Economic Policy Research, Institute for Fiscal Studies, CESifo</em>
-            </li>
+          <ul class="list-disc ml-6 space-y-1 text-m">
+            <li>Research Associate, 
+                <em>National Bureau of Economic Research</em></li>
+            <li>Research Fellow, 
+                <em>Centre for Economic Policy Research, Institute for Fiscal Studies, CESifo</em></li>
           </ul>
         </div>
         <div>
@@ -37,7 +35,6 @@ sections:
             <li><em>International Journal of Central Banking</em></li>
           </ul>
         </div>
-
         </div>
       headings:
         about: "Bio"
