@@ -88,7 +88,6 @@
       <a class="{{ $classes }}" href="{{ $url | safeURL }}" {{ $target | safeHTMLAttr }} {{ with $rel }}rel="{{ delimit . " " }}"{{ end }} aria-label="{{ $ariaLabel }}" title="{{ $ariaLabel }}">
         {{ partial "functions/get_icon" (dict "name" (.icon | default "hero/link") "attributes" "style=\"height: 1em\" class='inline-block' aria-hidden='true'") }}
         <span>{{ $label }}</span>
-        {{ if $opensNewTab }}<span class="sr-only"> (opens in new tab)</span>{{ end }}
       </a>
     {{ end }}
   {{ end }}
