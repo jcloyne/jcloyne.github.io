@@ -107,7 +107,7 @@ sections:
       title: "Contact Details"
       subtitle: "Professor of Economics | UC Davis"
       text: |
-        James Cloyne  
+        ### James Cloyne
         Department of Economics  
         University of California Davis  
         One Shields Avenue  

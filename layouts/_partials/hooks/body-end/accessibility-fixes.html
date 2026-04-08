@@ -155,6 +155,24 @@
   } // end applyAccessibilityFixes
 
   /* --------------------------------------------------------------------
+     11b. Windows High Contrast Mode (WCAG 1.1.1 — Issue #1)
+          The vendor JS sets `color-scheme: light` on the <html> element,
+          which can prevent forced-colors (Windows High Contrast) from
+          applying its overrides. When forced-colors is active, clear the
+          inline color-scheme so the OS high-contrast palette takes effect.
+  -------------------------------------------------------------------- */
+  function applyHighContrastFix() {
+    if (window.matchMedia && window.matchMedia('(forced-colors: active)').matches) {
+      var html = document.documentElement;
+      // Override inline color-scheme: vendor JS may set it to 'light' which
+      // suppresses forced-color adjustments.
+      html.style.colorScheme = '';
+      // Ensure forced-color-adjust is not disabled anywhere we control.
+      html.style.forcedColorAdjust = 'auto';
+    }
+  }
+
+  /* --------------------------------------------------------------------
      12. New-Window / New-Tab Announcements (WCAG 3.2.2 — Issue #7)
          For every target="_blank" link that does not already mention
          "opens" in its aria-label or visible text, either:
@@ -185,10 +203,12 @@
     document.addEventListener('DOMContentLoaded', function () {
       applyAccessibilityFixes();
       applyNewWindowWarnings();
+      applyHighContrastFix();
     });
   } else {
     applyAccessibilityFixes();
     applyNewWindowWarnings();
+    applyHighContrastFix();
   }
 
 })();
