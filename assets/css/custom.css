@@ -203,6 +203,39 @@ textarea:focus-visible,
 }
 
 /* ========================================================
+   TOUCH TARGETS (Lighthouse)
+   Enlarge publication/citation links so touch targets are
+   easier to hit on mobile and tablet.
+   ======================================================== */
+.view-citation .hb-attachment-link-small,
+.view-citation .hb-attachment-link.js-cite-clipboard {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 2.75rem; /* 44px target */
+  padding: 0.45rem 0.6rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0.35rem;
+  border-radius: 0.3rem;
+  line-height: 1.2;
+}
+
+/* Keep title links comfortably tappable while preserving inline flow. */
+.view-citation a.underline {
+  line-height: 1.45;
+  text-underline-offset: 0.16em;
+}
+
+/* Extra spacing and target comfort on coarse pointers (touch devices). */
+@media (pointer: coarse) {
+  .view-citation .hb-attachment-link-small,
+  .view-citation .hb-attachment-link.js-cite-clipboard {
+    min-height: 3rem;
+    padding: 0.5rem 0.7rem;
+  }
+}
+
+/* ========================================================
    STICKY HEADER — SCROLL MARGIN  (WCAG 2.4.11 — Issue #12)
    Every focusable element gets scroll-margin-top so the sticky
    navbar does not cover it when the browser scrolls on Tab.

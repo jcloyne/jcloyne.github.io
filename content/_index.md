@@ -107,16 +107,16 @@ sections:
       title: "Contact Details"
       subtitle: "Professor of Economics | UC Davis"
       text: |
-        ### James Cloyne
-        Department of Economics  
-        University of California Davis  
-        One Shields Avenue  
+        **Mailing Address:**<br>
+        Department of Economics<br>
+        University of California, Davis<br>
+        One Shields Avenue<br>
         Davis, California 95616
 
         **Email:** [jcloyne@ucdavis.edu](mailto:jcloyne@ucdavis.edu)  
         **Gmail:** [james.cloyne.econ@gmail.com](mailto:james.cloyne.econ@gmail.com)
     design:
-      columns: "2"
+      columns: "1"
       css_class: "research-block-spacing"
     ue: "section-contact"
     id: "contact"
