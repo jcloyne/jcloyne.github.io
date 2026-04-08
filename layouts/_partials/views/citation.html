@@ -15,7 +15,7 @@
   </span>
   ({{- $year -}}).
   {{ if $destination.url }}
-    <a href="{{ $destination.url }}" class="underline"{{ with $destination.target }} target="{{ . }}"{{ end }}{{ with $destination.rel }} rel="{{ delimit . " " }}"{{ end }}>{{ $item.Title }}</a>.
+    <a href="{{ $destination.url }}" class="underline"{{ with $destination.target }} target="{{ . }}"{{ end }}{{ with $destination.rel }} rel="{{ delimit . " " }}"{{ end }}>{{ $item.Title }}{{ if eq $destination.target "_blank" }}<span class="sr-only"> (opens in new tab)</span>{{ end }}</a>.
   {{ else }}
     {{ $item.Title }}.
   {{ end }}
@@ -38,7 +38,7 @@
     {{ partial "page_metadata_authors" $item }}.
   </span>
   {{ if $destination.url }}
-    <a href="{{ $destination.url }}"{{ with $destination.target }} target="{{ . }}"{{ end }}{{ with $destination.rel }} rel="{{ delimit . " " }}"{{ end }}>{{ $item.Title }}</a>.
+    <a href="{{ $destination.url }}"{{ with $destination.target }} target="{{ . }}"{{ end }}{{ with $destination.rel }} rel="{{ delimit . " " }}"{{ end }}>{{ $item.Title }}{{ if eq $destination.target "_blank" }}<span class="sr-only"> (opens in new tab)</span>{{ end }}</a>.
   {{ else }}
     {{ $item.Title }}.
   {{ end }}

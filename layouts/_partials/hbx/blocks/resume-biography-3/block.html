@@ -263,7 +263,7 @@
                     {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
                   {{ end }}
                   {{ $aff_opens_new := and $target (ne $target "") }}
-                  <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">{{ $aff_name }}{{ if $aff_opens_new }}<span class="sr-only"> (opens in new tab)</span>{{ end }}</a>
+                  <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} class="underline hover:text-primary-600 dark:hover:text-primary-400 transition-colors">{{ $aff_name }}{{ if $aff_opens_new }}<span class="sr-only"> (opens in new tab)</span>{{ end }}</a>
                 {{ else }}
                   {{ $aff_name }}
                 {{ end }}

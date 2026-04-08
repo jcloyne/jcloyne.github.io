@@ -97,11 +97,37 @@ header#site-header .nav-link,
   display: none !important;
 }
 
+/* ========================================================
+   LINKS IN FLOWING TEXT  (WCAG 1.4.1 — Issue #3)
+   Links must be distinguishable from surrounding non-link text
+   by more than colour alone. Add an underline to any <a> that
+   sits inside body-text paragraphs outside nav / header.
+   ======================================================== */
+main p a,
+main li a,
+footer p a,
+.prose a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Active nav link: underline provides a second visual indicator
+   beyond colour change, satisfying WCAG 1.4.1. */
+.nav-link.active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ========================================================
+   SKIP LINK  (WCAG 2.4.1 — Bypass Blocks, Issue #9)
+   Fixed positioning keeps it in the viewport corner when
+   focused regardless of how far the page is scrolled.
+   ======================================================== */
 .skip-link,
 .skip-to-main {
-  position: absolute;
+  position: fixed;       /* was: absolute — now stays in viewport */
   left: 0.75rem;
-  top: -3rem;
+  top: -3rem;            /* off-screen until focused */
   z-index: 1000;
   padding: 0.5rem 0.75rem;
   background: #ffffff;
@@ -116,27 +142,106 @@ header#site-header .nav-link,
 .skip-link:focus-visible,
 .skip-to-main:focus,
 .skip-to-main:focus-visible {
-  top: 0.75rem;
+  top: 0.75rem;          /* slide into view on focus */
 }
 
+/* ========================================================
+   FOCUS INDICATORS  (WCAG 2.4.7 / 2.4.11 — Issues #13, #9)
+   Two-colour strategy:
+     • Body / light backgrounds  → dark-blue outline (#0057d0)
+       provides ≥ 5.9 : 1 contrast against white (#fff).
+     • Dark header  → yellow outline (#facc15)
+       provides ≈ 4 : 1 contrast against the nav blue (#2a62a8).
+   ======================================================== */
+
+/* Default — visible on white / light backgrounds */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
-[role="button"]:focus-visible {
-  outline: 3px solid #facc15;
+[role="button"]:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible {
+  outline: 3px solid #0057d0;
   outline-offset: 2px;
 }
 
+/* Header override — yellow outline on dark-blue navbar */
+.page-header a:focus-visible,
+.page-header button:focus-visible,
+.page-header select:focus-visible,
+.page-header [role="button"]:focus-visible,
+.page-header [tabindex]:not([tabindex="-1"]):focus-visible {
+  outline-color: #facc15;
+}
+
+/* Attachment / citation buttons keep their own style */
 .hb-attachment-link:focus-visible {
-  outline: 3px solid #facc15;
+  outline: 3px solid #0057d0;
   outline-offset: 2px;
   border-radius: 0.25rem;
-  background: #fffbeb;
+  background: #eff6ff;
   text-decoration: underline;
 }
 
 .dark .hb-attachment-link:focus-visible {
-  background: rgba(250, 204, 21, 0.18);
+  background: rgba(0, 87, 208, 0.18);
+}
+
+/* ========================================================
+   STICKY HEADER — SCROLL MARGIN  (WCAG 2.4.12 — Issue #12)
+   Prevent the sticky navbar from covering an element that
+   receives focus via keyboard (approx. 4-5 rem header height).
+   ======================================================== */
+section[id],
+#main-content,
+#bio,
+#latest,
+#journal-publications,
+#other-publications,
+#contact {
+  scroll-margin-top: 5rem;
+}
+
+/* ========================================================
+   WINDOWS HIGH CONTRAST (WCAG 1.4.3 advisory — Issue #1)
+   Restore forced-colours-friendly borders and outlines so
+   interactive states remain visible in high-contrast mode.
+   ======================================================== */
+@media (forced-colors: active) {
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [role="button"]:focus-visible,
+  [tabindex]:not([tabindex="-1"]):focus-visible {
+    outline: 3px solid ButtonText;
+    outline-offset: 2px;
+  }
+
+  .skip-to-main,
+  .skip-link {
+    border: 2px solid ButtonText;
+    background: ButtonFace;
+    color: ButtonText;
+    forced-color-adjust: none;
+  }
+
+  .nav-link,
+  .nav-link.active,
+  .navbar-brand {
+    forced-color-adjust: none;
+    border: 1px solid transparent;
+  }
+
+  .nav-link.active {
+    border-bottom: 2px solid ButtonText;
+  }
+
+  header#site-header,
+  .header {
+    forced-color-adjust: none;
+    border-bottom: 1px solid ButtonText;
+  }
 }
