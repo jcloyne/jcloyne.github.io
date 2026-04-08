@@ -29,6 +29,7 @@ hugoblox:
   footer:
     style: minimal
     language_switcher: true
+    text: "If you are unable to access this content due to a disability, please [email me](mailto:jcloyne@ucdavis.edu) for assistance."
   copyright:
     notice: © {year} {name}
   content:

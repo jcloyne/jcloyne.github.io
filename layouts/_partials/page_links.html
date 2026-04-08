@@ -66,11 +66,15 @@
       {{ $label = "Link" }}
     {{ end }}
 
-    {{/* WCAG 2.1 AA: provide descriptive aria-label that includes publication title for context */}}
-    {{/* Also warn screen-reader users when the link opens in a new window (WCAG 3.2.2) */}}
-    {{ $ariaLabel := printf "%s: %s" $label $page.Title }}
+    {{/* WCAG 2.5.3 (Label in Name): do NOT use aria-label here — it overrides the
+         accessible name and creates a mismatch when vendor JS appends a sr-only
+         "(opens in new tab)" span to the text content of external links.
+         Instead, provide context via a sr-only span so the accessible name is
+         computed purely from text content: "Label: Title [(opens in new tab)]".
+         The title attribute gives the same text as a hover tooltip. */}}
+    {{ $titleAttr := printf "%s: %s" $label $page.Title }}
     {{ if $opensNewTab }}
-      {{ $ariaLabel = printf "%s: %s (opens in new tab)" $label $page.Title }}
+      {{ $titleAttr = printf "%s: %s (opens in new tab)" $label $page.Title }}
     {{ end }}
 
     {{ if eq .type "bibtex" }}
@@ -80,14 +84,14 @@
            remain so HugoBlox JS still intercepts the click to open the modal.
            The href serves as a progressive-enhancement fallback (downloads
            the .bib file if JS is unavailable). */}}
-      <a class="{{ $classes }} js-cite-clipboard" href="{{ $url | safeURL }}" data-filename="{{ $url }}" aria-label="{{ $ariaLabel }}" title="{{ $ariaLabel }}">
+      <a class="{{ $classes }} js-cite-clipboard" href="{{ $url | safeURL }}" data-filename="{{ $url }}" title="{{ $titleAttr }}">
         {{ partial "functions/get_icon" (dict "name" (.icon | default "hero/document-duplicate") "attributes" "style=\"height: 1em\" class='inline-block' aria-hidden='true'") }}
-        <span>{{ $label }}</span>
+        <span>{{ $label }}</span><span class="sr-only">: {{ $page.Title }}</span>
       </a>
     {{ else }}
-      <a class="{{ $classes }}" href="{{ $url | safeURL }}" {{ $target | safeHTMLAttr }} {{ with $rel }}rel="{{ delimit . " " }}"{{ end }} aria-label="{{ $ariaLabel }}" title="{{ $ariaLabel }}">
+      <a class="{{ $classes }}" href="{{ $url | safeURL }}" {{ $target | safeHTMLAttr }} {{ with $rel }}rel="{{ delimit . " " }}"{{ end }} title="{{ $titleAttr }}">
         {{ partial "functions/get_icon" (dict "name" (.icon | default "hero/link") "attributes" "style=\"height: 1em\" class='inline-block' aria-hidden='true'") }}
-        <span>{{ $label }}</span>
+        <span>{{ $label }}</span><span class="sr-only">: {{ $page.Title }}</span>
       </a>
     {{ end }}
   {{ end }}
