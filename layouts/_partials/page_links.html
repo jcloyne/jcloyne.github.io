@@ -71,11 +71,8 @@
          "(opens in new tab)" span to the text content of external links.
          Instead, provide context via a sr-only span so the accessible name is
          computed purely from text content: "Label: Title [(opens in new tab)]".
-         The title attribute gives the same text as a hover tooltip. */}}
-    {{ $titleAttr := printf "%s: %s" $label $page.Title }}
-    {{ if $opensNewTab }}
-      {{ $titleAttr = printf "%s: %s (opens in new tab)" $label $page.Title }}
-    {{ end }}
+         No title attribute: it duplicates the text content and causes some screen
+         readers to announce the label twice. */}}
 
     {{ if eq .type "bibtex" }}
       {{/* Use <a> instead of <button> so Safari Read Aloud treats it as a
@@ -84,12 +81,12 @@
            remain so HugoBlox JS still intercepts the click to open the modal.
            The href serves as a progressive-enhancement fallback (downloads
            the .bib file if JS is unavailable). */}}
-      <a class="{{ $classes }} js-cite-clipboard" href="{{ $url | safeURL }}" data-filename="{{ $url }}" title="{{ $titleAttr }}">
+      <a class="{{ $classes }} js-cite-clipboard" href="{{ $url | safeURL }}" data-filename="{{ $url }}">
         {{ partial "functions/get_icon" (dict "name" (.icon | default "hero/document-duplicate") "attributes" "style=\"height: 1em\" class='inline-block' aria-hidden='true'") }}
         <span>{{ $label }}</span><span class="sr-only">: {{ $page.Title }}</span>
       </a>
     {{ else }}
-      <a class="{{ $classes }}" href="{{ $url | safeURL }}" {{ $target | safeHTMLAttr }} {{ with $rel }}rel="{{ delimit . " " }}"{{ end }} title="{{ $titleAttr }}">
+      <a class="{{ $classes }}" href="{{ $url | safeURL }}" {{ $target | safeHTMLAttr }} {{ with $rel }}rel="{{ delimit . " " }}"{{ end }}>
         {{ partial "functions/get_icon" (dict "name" (.icon | default "hero/link") "attributes" "style=\"height: 1em\" class='inline-block' aria-hidden='true'") }}
         <span>{{ $label }}</span><span class="sr-only">: {{ $page.Title }}</span>
       </a>
